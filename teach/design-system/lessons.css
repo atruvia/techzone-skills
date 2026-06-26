@@ -1,0 +1,341 @@
+/* ============================================================
+   teach — Lesson & reference stylesheet
+   Built ON TOP OF the Atruvia Design System.
+
+   Every lesson (./lessons/*.html) and reference document
+   (./reference/*.html) links THIS one file:
+
+     <link rel="stylesheet" href="../assets/design-system/lessons.css">
+
+   It imports the Atruvia brand tokens (colors_and_type.css —
+   colors, the Atruvia webfont, the type scale, spacing) and adds
+   the teaching-specific components: objectives, callouts, the
+   primary-source box, quizzes, the "frag deine Lehrkraft" reminder,
+   the VIA-line divider, and print rules.
+
+   RULE: compose from the Atruvia tokens (--atr-navy, --space-5,
+   --font-display, --r-pill …). Never invent new colors, fonts, or
+   spacing values. No emoji, no Unicode glyphs as icons.
+   ============================================================ */
+
+@import url('colors_and_type.css');
+
+/* ============================================================
+   Reading surface — Tufte-calm: one generous, readable measure,
+   navy ink on white, lots of air. Lessons get revisited and
+   printed, so legibility beats density.
+   ============================================================ */
+
+.lesson,
+.reference {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--gutter) var(--space-9);
+}
+
+/* ---- Header: eyebrow -> title (Light 300) -> lead, tied to mission */
+.lesson__header { margin-bottom: var(--space-7); }
+
+.lesson__eyebrow {            /* the mission tie-in / topic kicker */
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--atr-blue);
+  margin: 0 0 var(--space-3);
+}
+
+.lesson__lead {               /* one-sentence "why this lesson" */
+  font-size: var(--fs-lg);
+  line-height: var(--lh-base);
+  color: var(--atr-ink);
+  margin: 0 0 var(--space-5);
+  text-wrap: pretty;
+}
+
+.lesson__meta {               /* lesson number, est. time */
+  font-size: var(--fs-xs);
+  color: var(--atr-ink-2);
+}
+
+.lesson__body > * + * { margin-top: var(--space-4); }
+.lesson__body h2 { margin-top: var(--space-7); }
+.lesson__body h3 { margin-top: var(--space-6); }
+
+/* ============================================================
+   The VIA Line — the brand's signature connector.
+   It is a GRAPHIC, never a border. Always coral (#fd5f4c),
+   3-4px round-capped stroke. Drop in brand/via-line.svg, or
+   inline a path that connects two ideas (see lesson-template).
+   ============================================================ */
+
+.via-line {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: var(--space-8) auto;
+}
+
+/* When animated, the line DRAWS (slow, deliberate). Add .via-line--draw. */
+.via-line--draw path {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: via-draw var(--dur-line) var(--ease-out) forwards;
+}
+@keyframes via-draw { to { stroke-dashoffset: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .via-line--draw path { animation: none; stroke-dashoffset: 0; }
+}
+
+/* ============================================================
+   Objectives — "Das kannst du danach" (what you'll be able to do).
+   Coral square markers, drawn in CSS (no Unicode/emoji icons).
+   ============================================================ */
+
+.objectives {
+  list-style: none;
+  margin: 0 0 var(--space-5);
+  padding: 0;
+}
+.objectives li {
+  position: relative;
+  padding-left: var(--space-5);
+  margin: 0 0 var(--space-3);
+  line-height: var(--lh-base);
+}
+.objectives li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  background: var(--atr-coral);   /* the VIA colour, as a marker */
+  border-radius: 2px;
+}
+
+/* ============================================================
+   Callouts — key insight / note. Calm cyan-soft surface.
+   ============================================================ */
+
+.callout {
+  background: var(--atr-surface-cyan);
+  border-radius: var(--r-lg);
+  padding: var(--space-5);
+  margin: var(--space-5) 0;
+}
+.callout > :first-child { margin-top: 0; }
+.callout > :last-child { margin-bottom: 0; }
+
+.callout__label {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--atr-navy);
+  margin: 0 0 var(--space-2);
+}
+
+/* A neutral note variant on the alt surface */
+.callout--note {
+  background: var(--atr-surface-alt);
+  border: 1px solid var(--atr-line);
+}
+
+/* ============================================================
+   Primary source — the single best resource to read/watch next.
+   teach: every lesson recommends one high-trust primary source.
+   ============================================================ */
+
+.primary-source {
+  background: var(--atr-blue-soft);
+  border-radius: var(--r-lg);
+  padding: var(--space-5);
+  margin: var(--space-6) 0;
+}
+.primary-source__label {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--atr-blue);
+  margin: 0 0 var(--space-2);
+}
+.primary-source a { font-weight: var(--weight-medium); }
+
+/* ============================================================
+   Citations — inline references that back up claims. Lessons
+   should be littered with them. Styled as small superscript-ish
+   links so they don't break reading flow.
+   ============================================================ */
+
+.cite {
+  font-size: var(--fs-xs);
+  color: var(--atr-ink-2);
+}
+.cite a { text-decoration-thickness: 1px; }
+
+/* ============================================================
+   Quiz — retrieval practice with the tightest possible feedback
+   loop (see quiz.js). Options are pills; correct/incorrect states
+   use the semantic tokens. Keep every answer the same length so
+   formatting gives nothing away.
+   ============================================================ */
+
+.quiz {
+  border: 1px solid var(--atr-line);
+  border-radius: var(--r-lg);
+  padding: var(--space-5);
+  margin: var(--space-6) 0;
+}
+.quiz__label {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--atr-blue);
+  margin: 0 0 var(--space-3);
+}
+.quiz__q {
+  font-weight: var(--weight-medium);
+  color: var(--atr-navy);
+  margin: 0 0 var(--space-4);
+}
+.quiz__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.quiz__option {
+  font: inherit;
+  text-align: left;
+  color: var(--atr-navy);
+  background: var(--atr-white);
+  border: 1px solid var(--atr-line);
+  border-radius: var(--r-md);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease);
+}
+.quiz__option:hover { background: var(--atr-navy-06); }
+.quiz__option:disabled { cursor: default; }
+.quiz__option.is-correct {
+  border-color: var(--atr-success);
+  background: rgba(31, 122, 92, 0.10);
+  color: var(--atr-success);
+  font-weight: var(--weight-medium);
+}
+.quiz__option.is-wrong {
+  border-color: var(--atr-danger);
+  background: rgba(199, 47, 47, 0.08);
+  color: var(--atr-danger);
+}
+.quiz__feedback {
+  margin: var(--space-4) 0 0;
+  font-size: var(--fs-sm);
+  color: var(--atr-ink-2);
+}
+.quiz__feedback[hidden] { display: none; }
+
+/* ============================================================
+   Ask-your-teacher reminder — the agent IS the learner's teacher.
+   Every lesson closes with an invitation to ask follow-ups.
+   ============================================================ */
+
+.ask-teacher {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  background: var(--atr-navy);
+  color: var(--atr-ink-inv);
+  border-radius: var(--r-lg);
+  padding: var(--space-5);
+  margin: var(--space-7) 0 0;
+}
+.ask-teacher__mark {           /* the isolated VIA mark, on navy */
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+}
+.ask-teacher h2,
+.ask-teacher h3 { color: var(--atr-ink-inv); margin-top: 0; }
+.ask-teacher p { color: var(--atr-ink-inv); margin-bottom: 0; }
+.ask-teacher a { color: var(--atr-ink-inv); }
+
+/* ============================================================
+   Buttons — navy pill primary, ghost outline. Calm states per CD:
+   no scale on hover, no shadow theatrics.
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  font-size: var(--fs-sm);
+  line-height: 1;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease);
+}
+.btn--primary { background: var(--atr-navy); color: var(--atr-ink-inv); }
+.btn--primary:hover { background: var(--atr-navy-deep); color: var(--atr-ink-inv); }
+.btn--primary:active { transform: scale(0.96); }
+.btn--ghost { background: transparent; color: var(--atr-navy); border-color: var(--atr-navy); }
+.btn--ghost:hover { background: var(--atr-navy-06); color: var(--atr-navy); }
+
+/* ============================================================
+   Footer navigation — previous / next lesson + reference links.
+   Lessons interlink via anchors (teach: a connected course, not
+   a pile of one-offs).
+   ============================================================ */
+
+.lesson__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--atr-line);
+}
+.lesson__nav a { font-weight: var(--weight-medium); }
+
+.lesson__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-7);
+  color: var(--atr-ink-3);
+  font-size: var(--fs-xs);
+}
+.lesson__brand img { height: 18px; width: auto; }
+
+/* ============================================================
+   Print — lessons & reference docs should print out well.
+   White background, no interactive chrome, comfortable margins.
+   ============================================================ */
+
+@media print {
+  html { font-size: 11pt; }
+  body { background: var(--atr-white); }
+  .lesson, .reference { max-width: none; padding: 0; }
+  .quiz__option { border-color: var(--atr-line); }
+  .ask-teacher { background: var(--atr-white); color: var(--atr-ink); border: 1px solid var(--atr-line); }
+  .ask-teacher h2, .ask-teacher h3, .ask-teacher p, .ask-teacher a { color: var(--atr-ink); }
+  .btn, .quiz__feedback[hidden] { display: none; }
+  a { color: var(--atr-ink); }
+  .via-line--draw path { stroke-dashoffset: 0; animation: none; }
+}

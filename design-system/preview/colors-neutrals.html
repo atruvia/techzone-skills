@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 24px; background: #fff; }
+  .swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .sw { display: flex; flex-direction: column; gap: 6px; }
+  .chip { aspect-ratio: 1.4 / 1; border-radius: 10px; border: 1px solid var(--atr-line); position: relative; overflow: hidden; }
+  .chip .hex { position: absolute; bottom: 8px; left: 10px; font-family: var(--font-mono); font-size: 11px; font-weight: 500; }
+  .name { font-family: var(--font-display); font-size: 12px; font-weight: 600; color: var(--atr-navy); }
+  .meta { font-family: var(--font-mono); font-size: 10px; color: var(--atr-ink-2); }
+</style>
+</head>
+<body>
+<div class="swatches">
+  <div class="sw">
+    <div class="chip" style="background:#FFFFFF;color:var(--atr-navy)"><span class="hex">#FFFFFF</span></div>
+    <div class="name">White</div>
+    <div class="meta">--atr-white · page bg</div>
+  </div>
+  <div class="sw">
+    <div class="chip" style="background:#F5F8FB;color:var(--atr-navy)"><span class="hex">#F5F8FB</span></div>
+    <div class="name">Surface alt</div>
+    <div class="meta">--atr-surface-alt</div>
+  </div>
+  <div class="sw">
+    <div class="chip" style="background:#D6DCE9;color:var(--atr-navy)"><span class="hex">#D6DCE9</span></div>
+    <div class="name">Line</div>
+    <div class="meta">--atr-line · border</div>
+  </div>
+  <div class="sw">
+    <div class="chip" style="background:#4B4B85;color:#fff"><span class="hex">#4B4B85</span></div>
+    <div class="name">Ink 2</div>
+    <div class="meta">--atr-ink-2 · secondary</div>
+  </div>
+  <div class="sw">
+    <div class="chip" style="background:#000064;color:#fff"><span class="hex">#000064</span></div>
+    <div class="name">Ink</div>
+    <div class="meta">--atr-ink · body (navy!)</div>
+  </div>
+</div>
+</body>
+</html>

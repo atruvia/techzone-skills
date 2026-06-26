@@ -1,0 +1,314 @@
+/* ============================================================
+   Atruvia Design System — Colors & Type tokens
+   Source of truth for every brand surface in this folder.
+
+   Palette extracted from Atruvia's live CSS custom properties
+   (confirmed by Atruvia employee, May 2026).
+   ============================================================ */
+
+/* ---- Webfont loading -----------------------------------------
+   The real Atruvia CD typeface, self-hosted from /fonts.
+   Manrope (Google Fonts) is the offline fallback for partial
+   weights / unsupported environments.
+   ----------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Atruvia';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url('fonts/atruvia-light.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atruvia';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('fonts/atruvia-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atruvia';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('fonts/atruvia-medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atruvia';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('fonts/atruvia-bold.woff2') format('woff2');
+}
+
+/* Manrope fallback — loaded in parallel so swap is fast if the
+   Atruvia woff2 files are missing in your output. */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ============================================================
+     COLORS (verified — from live atruvia.de custom properties)
+     ============================================================ */
+
+  /* ---- Brand core ---- */
+  --atr-navy:        #000064;  /* Primary brand. Headlines, body text, icons. */
+  --atr-blue:        #0a5ae1;  /* Accent — links, primary buttons, icon glyphs. */
+  --atr-coral:       #fd5f4c;  /* THE VIA Line — value diagrams, decorative line. */
+  --atr-cyan-soft:   #d4f2f5;  /* Section background AND icon-button surface. */
+
+  /* ---- Derived navy steps (for hover / surfaces / scrims) ---- */
+  --atr-navy-deep:   #00004A;  /* Hover/pressed on navy */
+  --atr-navy-20:     rgba(0, 0, 100, 0.2);   /* #00006433 — pager bg from CD */
+  --atr-navy-10:     rgba(0, 0, 100, 0.1);
+  --atr-navy-06:     rgba(0, 0, 100, 0.06);  /* subtle hover wash */
+
+  /* ---- Derived blue steps ---- */
+  --atr-blue-deep:   #0848B5;  /* hover on accent blue */
+  --atr-blue-soft:   #e8f0fc;  /* tinted alt blue bg */
+
+  /* ---- Surfaces ---- */
+  --atr-white:       #FFFFFF;  /* page bg (theme-background-color) */
+  --atr-surface:     #FFFFFF;  /* card bg */
+  --atr-surface-cyan: #d4f2f5; /* cyan-soft section surface (very common!) */
+  --atr-surface-alt: #F5F8FB;  /* light blue-tinted alt surface */
+
+  /* ---- Borders ---- */
+  --atr-line:        #D6DCE9;  /* cool light-blue gray border */
+  --atr-line-soft:   #E8ECF3;
+  --atr-rule:        #000064;  /* hr — actually pure navy on the live site */
+
+  /* ---- Text — everything is navy on white. Distinctive choice. ---- */
+  --atr-ink:         #000064;  /* paragraph color in CD */
+  --atr-ink-2:       #4B4B85;  /* secondary, derived (navy desaturated) */
+  --atr-ink-3:       #8A8AB5;  /* tertiary / placeholder */
+  --atr-ink-inv:     #FFFFFF;  /* on navy */
+
+  /* ---- Semantic ---- */
+  --atr-success:     #1F7A5C;
+  --atr-warning:     #C77A00;
+  --atr-danger:      #C72F2F;
+  --atr-info:        #0a5ae1;
+
+  /* ============================================================
+     TYPE
+     ============================================================ */
+
+  --font-display: 'Atruvia', 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body:    'Atruvia', 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Atruvia ships 300 (light), 400 (regular), 500 (medium), 700 (bold). */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;  /* DEFAULT for headlines per CD (--headline-font-weight) */
+  --weight-semibold: 500;  /* alias — there is no 600 weight in CD */
+  --weight-bold:     700;
+  --weight-black:    700;  /* alias */
+
+  /* Type scale — CD uses 1.8rem (≈ 18px) for paragraphs and lists at 10px root. */
+  /* We anchor on 18px body, scale display from there. */
+  --fs-hero:    clamp(3rem, 6vw, 5rem);    /* 48–80px */
+  --fs-h1:      clamp(2.25rem, 4.5vw, 3.5rem);
+  --fs-h2:      clamp(1.75rem, 3.2vw, 2.5rem);
+  --fs-h3:      1.625rem;
+  --fs-h4:      1.25rem;
+  --fs-lg:      1.25rem;   /* 20px */
+  --fs-base:    1.125rem;  /* 18px — paragraph from CD */
+  --fs-sm:      1rem;      /* 16px */
+  --fs-xs:      0.875rem;  /* 14px — table from CD */
+
+  --lh-tight:   1.1;
+  --lh-snug:    1.2;      /* CD --headline-line-height: 1.2 */
+  --lh-base:    1.5;      /* CD --paragraph-line-height: 1.5 */
+  --lh-loose:   1.7;
+
+  --tracking-tight: -0.02em;
+  --tracking-snug:  -0.01em;
+  --tracking-base:  0;
+  --tracking-wide:  0.04em;
+  --tracking-caps:  0.08em;
+
+  /* ============================================================
+     SPACING — based on CD's section gaps. CD uses 6.84rem (≈ 68px)
+     for major sections and 3.77rem (≈ 38px) for content gaps.
+     We expose an 8-step scale that lines up.
+     ============================================================ */
+
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  38px;   /* CD --page-content-gap */
+  --space-7:  56px;
+  --space-8:  68px;   /* CD --page-content-section-gap */
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* ---- Radii ---- */
+  --r-none: 0;
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   12px;
+  --r-xl:   16px;
+  --r-pill: 999px;
+
+  /* ---- Elevation (minimal) ---- */
+  --shadow-soft: 0 1px 2px rgba(0,0,100,0.04), 0 4px 12px rgba(0,0,100,0.06);
+  --shadow-pop:  0 8px 24px rgba(0,0,100,0.12);
+
+  /* ---- Motion ---- */
+  --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:    cubic-bezier(0, 0, 0.2, 1);
+  --dur-fast:    150ms;
+  --dur-base:    220ms;
+  --dur-slow:    420ms;
+  --dur-line:    900ms;  /* VIA Line draw */
+
+  /* ---- Layout ---- */
+  --content-max: 1280px;
+  --gutter:      max(24px, 4vw);
+}
+
+/* ============================================================
+   Semantic element helpers
+   ============================================================ */
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  color: var(--atr-ink);                /* navy paragraph color */
+  background: var(--atr-white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
+.atr-hero, h1.hero {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);     /* CD uses LIGHT 300 for large page titles */
+  font-size: var(--fs-hero);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--atr-navy);
+  margin: 0 0 var(--space-5);
+  text-wrap: balance;
+}
+
+h1, .atr-h1 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);     /* big page titles → light */
+  font-size: var(--fs-h1);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--atr-navy);
+  margin: 0 0 var(--space-5);
+  text-wrap: balance;
+}
+
+/* Section / content headlines use BOLD 700 per observed live usage */
+h2, .atr-h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--atr-navy);
+  margin: 0 0 var(--space-4);
+  text-wrap: balance;
+}
+
+h3, .atr-h3 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  color: var(--atr-navy);
+  margin: 0 0 var(--space-3);
+}
+
+h4, .atr-h4 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-snug);
+  color: var(--atr-navy);
+  margin: 0 0 var(--space-2);
+}
+
+p, .atr-body {
+  font-size: var(--fs-base);
+  font-weight: var(--weight-regular);   /* CD paragraph weight 400 */
+  line-height: var(--lh-base);
+  color: var(--atr-ink);
+  margin: 0 0 var(--space-4);
+  text-wrap: pretty;
+}
+
+.atr-lead {
+  font-size: var(--fs-lg);
+  line-height: var(--lh-base);
+  color: var(--atr-ink);
+}
+
+.atr-small, small {
+  font-size: var(--fs-sm);
+  color: var(--atr-ink-2);
+}
+
+.atr-eyebrow {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--atr-blue);
+  margin: 0 0 var(--space-3);
+}
+
+.atr-mono, code, kbd {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+a {
+  color: var(--atr-blue);                    /* CD --link-color */
+  text-decoration: underline;                /* underlined by default — observed live */
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease);
+}
+a:hover { color: var(--atr-navy); }            /* CD --link-hover-color */
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--atr-rule);
+  margin: var(--space-6) 0;
+}
+
+::selection { background: var(--atr-navy); color: var(--atr-white); }
+
+/* Dark surfaces */
+.on-navy {
+  background: var(--atr-navy);
+  color: var(--atr-ink-inv);
+}
+.on-navy h1, .on-navy h2, .on-navy h3, .on-navy h4,
+.on-navy .atr-hero { color: var(--atr-ink-inv); }
+.on-navy a { color: var(--atr-ink-inv); }
+.on-navy .atr-eyebrow { color: #d4f2f5; }
+
+/* Big stat number — used in "Zahlen & Fakten" pattern */
+.atr-stat {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--atr-navy);
+}

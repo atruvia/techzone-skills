@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+  teach — Lektionsvorlage (Atruvia Design System, volle Marke)
+
+  Kopiere diese Datei nach ./lessons/0001-<name>.html und ersetze die
+  Platzhalter. Die relativen Pfade (../assets/design-system/…) stimmen,
+  sobald die Lektion in ./lessons/ liegt und das Design-System nach
+  ./assets/design-system/ kopiert wurde.
+
+  Marke: Atruvia. Stimme: deutsch, »Wir«, »du«, Gender-Stern
+  (Kund*innen, Kolleg*innen). »Deutsche Guillemets« für Zitate.
+  Keine Emoji, keine Unicode-Zeichen als Icons. Nur Atruvia-Tokens.
+-->
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>01 — Lektionstitel · teach</title>
+  <link rel="stylesheet" href="../assets/design-system/lessons.css">
+</head>
+<body>
+  <main class="lesson">
+
+    <!-- ── Kopf: Eyebrow (Mission-Bezug) → Titel (Light 300) → Lead ── -->
+    <header class="lesson__header">
+      <p class="lesson__eyebrow">Mission · Warum das hier zählt</p>
+      <h1 class="atr-hero">Ein eng umrissener Gedanke, den du heute mitnimmst</h1>
+      <p class="lesson__lead">
+        Ein Satz, der die Lektion an deine Mission knüpft — was du danach
+        kannst und warum es sich lohnt.
+      </p>
+      <p class="lesson__meta">Lektion 01 · ca. 6 Minuten · Wissen &amp; Übung</p>
+    </header>
+
+    <section class="lesson__body">
+
+      <!-- Lernziele -->
+      <h2>Das kannst du danach</h2>
+      <ul class="objectives">
+        <li>Ein konkretes, überprüfbares Ergebnis.</li>
+        <li>Ein zweites, das auf dem ersten aufbaut.</li>
+      </ul>
+
+      <!-- Wissen zuerst, knapp gehalten (kleines Arbeitsgedächtnis) -->
+      <h2>Worum es geht</h2>
+      <p>
+        Erkläre nur das Wissen, das für die Fertigkeit nötig ist. Belege
+        Aussagen mit Quellen<span class="cite"> (<a href="#">Quelle, Jahr</a>)</span>,
+        damit die Lektion vertrauenswürdig bleibt.
+      </p>
+
+      <div class="callout">
+        <p class="callout__label">Kerngedanke</p>
+        <p>Die eine Sache, die hängen bleiben soll. Ruhig, klar, ohne Hype.</p>
+      </div>
+
+      <!-- Die VIA-Linie: das Marken-Element. Immer koralle, rund, 3px.
+           Verbindet zwei Begriffe — »Mensch« und »Technologie«. -->
+      <svg class="via-line" viewBox="0 0 600 100" preserveAspectRatio="xMidYMid meet"
+           role="img" aria-label="VIA-Linie verbindet Mensch und Technologie">
+        <g fill="none" stroke="#fd5f4c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 120 50 L 140 50 L 140 22 L 220 22 L 250 50 L 320 50 Q 360 50 360 70 Q 360 90 380 90 Q 400 90 400 70 Q 400 50 380 50 L 460 50"/>
+        </g>
+        <g fill="#000064" text-anchor="middle" font-family="'Atruvia', 'Manrope', sans-serif" font-weight="700">
+          <text x="60" y="55" font-size="16">Mensch</text>
+          <text x="540" y="55" font-size="16">Technologie</text>
+        </g>
+      </svg>
+
+      <!-- Fertigkeit: enge Rückkopplung. Schwierigkeit ist hier das Werkzeug. -->
+      <h2>Jetzt du</h2>
+      <p>Prüfe dich selbst — Abrufen aus dem Gedächtnis baut echtes Behalten auf.</p>
+
+      <div class="quiz">
+        <p class="quiz__label">Wissens-Check</p>
+        <p class="quiz__q">Welche Aussage trifft zu?</p>
+        <div class="quiz__options">
+          <!-- Antworten gleich lang halten; data-correct markiert die richtige. -->
+          <button class="quiz__option" data-correct="true">Die erste klar formulierte Option</button>
+          <button class="quiz__option">Die zweite klar formulierte Option</button>
+          <button class="quiz__option">Die dritte klar formulierte Option</button>
+        </div>
+        <p class="quiz__feedback" hidden>
+          Kurze Begründung, warum die richtige Antwort stimmt — und warum die
+          anderen verlocken, aber danebenliegen.
+        </p>
+      </div>
+
+      <!-- Primärquelle: die eine beste Ressource zum Weiterlernen -->
+      <aside class="primary-source">
+        <p class="primary-source__label">Primärquelle</p>
+        <p>
+          Lies oder schau als Nächstes:
+          <a href="#">Titel der hochwertigsten Quelle, die du gefunden hast</a>.
+        </p>
+      </aside>
+
+      <!-- Frag deine Lehrkraft: der Agent ist die Lehrkraft -->
+      <aside class="ask-teacher">
+        <img class="ask-teacher__mark" src="../assets/design-system/brand/via-mark.svg" alt="">
+        <div>
+          <h3>Etwas unklar?</h3>
+          <p>Frag einfach nach — wir gehen jeden Schritt gemeinsam durch, bis es sitzt.</p>
+        </div>
+      </aside>
+
+    </section>
+
+    <!-- Fußnavigation: verbindet die Lektionen zu einem Kurs -->
+    <nav class="lesson__nav">
+      <a href="#">‹ Vorherige Lektion</a>
+      <a href="../reference/index.html">Nachschlagewerk</a>
+      <a href="#">Nächste Lektion ›</a>
+    </nav>
+
+    <p class="lesson__brand">
+      <img src="../assets/design-system/brand/atruvia-logo.svg" alt="Atruvia">
+      <span>Gestaltet im Atruvia Design System</span>
+    </p>
+
+  </main>
+
+  <script src="../assets/design-system/quiz.js"></script>
+</body>
+</html>

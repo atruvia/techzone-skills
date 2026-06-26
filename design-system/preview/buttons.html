@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 24px; background: #fff; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn { font-family: var(--font-display); font-weight: 500; font-size: 15px; padding: 12px 24px; border-radius: 999px; border: 1px solid transparent; cursor: pointer; transition: background var(--dur-base) var(--ease), color var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease); display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+  .btn--primary { background: var(--atr-navy); color: #fff; }
+  .btn--primary:hover { background: var(--atr-navy-deep); }
+  .btn--outline { background: transparent; color: var(--atr-navy); border-color: var(--atr-navy); }
+  .btn--outline:hover { background: var(--atr-navy-06); }
+  .btn--text { background: transparent; color: var(--atr-navy); padding: 12px 4px; gap: 6px; }
+  .btn--text .arrow { color: var(--atr-blue); transition: color var(--dur-fast) var(--ease); }
+  .btn--text:hover .arrow { color: var(--atr-navy); }
+  .icon-btn { width: 44px; height: 44px; border-radius: 999px; background: var(--atr-cyan-soft); color: var(--atr-navy); display: inline-flex; align-items: center; justify-content: center; border: 0; cursor: pointer; transition: background var(--dur-base) var(--ease), color var(--dur-base) var(--ease); }
+  .icon-btn:hover { background: var(--atr-navy); color: #fff; }
+  .arrow { font-family: var(--font-mono); font-size: 16px; line-height: 1; }
+</style>
+</head>
+<body>
+<div class="row">
+  <button class="btn btn--primary">Mehr erfahren <span class="arrow">→</span></button>
+  <button class="btn btn--outline">Weiterlesen</button>
+  <button class="btn btn--text">Weiterlesen <span class="arrow">→</span></button>
+  <button class="icon-btn" aria-label="Weiter"><span class="arrow">→</span></button>
+  <button class="icon-btn" aria-label="Suche"><span class="arrow">⌕</span></button>
+</div>
+</body>
+</html>
