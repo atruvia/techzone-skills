@@ -8,17 +8,17 @@ Jeder Skill ist ein eigenständiger Ordner mit einer `SKILL.md` und allen Assets
 
 ## Die Skills
 
-### `design-system/` — Atruvia Design System
+### `atruvia-design-system/` — Atruvia Design System
 
 Ein einsatzbereites Design System, um gut gebrandete Oberflächen, Präsentationen und Mockups in der visuellen Sprache von Atruvia zu erstellen. Enthält Marken-Tokens (Farben, Typografie), die selbst gehosteten Atruvia-Schriften, echte SVG-Assets (Logo, VIA-Mark, VIA-Linie, Partnerlogos), ein hochauflösendes UI-Kit, das atruvia.de nachbildet, sowie kopierfertige Komponenten-Previews.
 
-→ Details in [`design-system/README.md`](design-system/README.md)
+→ Details in [`atruvia-design-system/README.md`](atruvia-design-system/README.md)
 
-### `teach/` — Teach
+### `atruvia-teach/` — Teach
 
-Verwandelt das aktuelle Verzeichnis in einen statefulen **Lern-Workspace**: Claude wird zum\*zur Tutor\*in und baut über mehrere Sitzungen hinweg aufeinander aufbauende Lektionen, Referenzdokumente und Lernaufzeichnungen auf — gegroundet in der Mission der lernenden Person. Jede Lektion ist ein eigenständiges, schön gestaltetes HTML-Dokument, gebaut auf der gebündelten Atruvia-Design-System-Variante in [`teach/design-system/`](teach/design-system/).
+Verwandelt das aktuelle Verzeichnis in einen statefulen **Lern-Workspace**: Claude wird zum\*zur Tutor\*in und baut über mehrere Sitzungen hinweg aufeinander aufbauende Lektionen, Referenzdokumente und Lernaufzeichnungen auf — gegroundet in der Mission der lernenden Person. Jede Lektion ist ein eigenständiges, schön gestaltetes HTML-Dokument, gebaut auf der gebündelten Atruvia-Design-System-Variante in [`atruvia-teach/design-system/`](atruvia-teach/design-system/).
 
-→ Details in [`teach/SKILL.md`](teach/SKILL.md)
+→ Details in [`atruvia-teach/SKILL.md`](atruvia-teach/SKILL.md)
 
 ---
 
@@ -32,11 +32,11 @@ Skills sind Ordner, die Claude Code automatisch erkennt. Lege sie in eines der b
 ```sh
 # Beispiel: das Design System persönlich verfügbar machen
 git clone https://github.com/atruvia/techzone-skills.git
-cp -R techzone-skills/design-system ~/.claude/skills/design-system
-cp -R techzone-skills/teach          ~/.claude/skills/teach
+cp -R techzone-skills/atruvia-design-system ~/.claude/skills/atruvia-design-system
+cp -R techzone-skills/atruvia-teach          ~/.claude/skills/atruvia-teach
 ```
 
-Danach kannst du den Skill in Claude Code aufrufen — z. B. über `/atruvia-design` für das Design System oder `/teach` zum Lernen.
+Danach kannst du den Skill in Claude Code aufrufen — z. B. über `/atruvia-design-system` für das Design System oder `/atruvia-teach` zum Lernen.
 
 ---
 
