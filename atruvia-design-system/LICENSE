@@ -1,21 +1,93 @@
-MIT License
+ATRUVIA DESIGN SYSTEM — PROPRIETARY LICENSE
 
-Copyright (c) 2026 Atruvia AG
+Copyright © 2026 Atruvia AG. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This repository ("the Design System") and everything in it — including, without
+limitation, the brand assets, logos, the VIA Line motif, fonts, icons, colour
+values, photography, design tokens, stylesheets, React components, templates,
+guidelines, documentation and the bundled artifacts (collectively, the
+"Materials") — is the confidential and proprietary property of Atruvia AG
+("Atruvia"). The Materials embody and reproduce the registered trade marks,
+corporate identity and brand of Atruvia AG.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+THIS IS NOT OPEN-SOURCE SOFTWARE. No rights are granted except those expressly
+set out below.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+1. DEFINITIONS
+
+   1.1 "Authorized User" means a current employee of Atruvia AG, or an
+       individual acting under a written contract with Atruvia AG (e.g. a
+       contractor, agency or service provider engaged by Atruvia), in each
+       case only while that employment or engagement is in force.
+
+   1.2 "Atruvia Purpose" means the design, development, marketing or operation
+       of products, services, communications or interfaces that are owned by,
+       branded as, or delivered on behalf of Atruvia AG and the Genossenschaft-
+       liche FinanzGruppe Volksbanken Raiffeisenbanken within Atruvia's
+       official remit.
+
+2. GRANT OF LICENSE
+
+   Subject to continuous compliance with this License, Atruvia grants each
+   Authorized User a limited, non-exclusive, non-transferable, non-sublicens-
+   able and revocable right to use, reproduce and adapt the Materials solely:
+
+   (a) by an Authorized User; AND
+   (b) exclusively for an Atruvia Purpose.
+
+   Both conditions must be met at all times. Use by anyone who is not an
+   Authorized User, or use for any purpose that is not an Atruvia Purpose, is
+   prohibited.
+
+3. RESTRICTIONS
+
+   Except as expressly permitted in Section 2, you may NOT:
+
+   (a) use the Materials in any personal, freelance, third-party, client or
+       non-Atruvia project, or for any product, brand or entity other than
+       Atruvia AG;
+   (b) copy, distribute, publish, sublicense, sell, rent, lease or otherwise
+       make the Materials available to any person who is not an Authorized
+       User;
+   (c) remove, obscure or alter any copyright, trade-mark or proprietary
+       notice;
+   (d) use the Atruvia name, logos, VIA Line or other brand elements in a way
+       that is misleading, that disparages Atruvia, or that implies endorsement
+       of anything not actually authorized by Atruvia;
+   (e) retain or continue to use the Materials after your employment or
+       engagement with Atruvia ends (see Section 5).
+
+4. THIRD-PARTY MATERIALS
+
+   The Design System may include or reference third-party materials (for
+   example substitute typefaces such as Hanken Grotesk and IBM Plex Mono,
+   the Lucide icon set, and open-source libraries such as React). Such
+   third-party materials remain governed by their own respective licenses,
+   and nothing in this License grants or restricts rights in them beyond what
+   those upstream licenses provide. It is the user's responsibility to comply
+   with all applicable third-party licenses.
+
+5. TERM AND TERMINATION
+
+   This License is effective until terminated. It terminates automatically,
+   without notice, if you breach any of its terms, or when you cease to be an
+   Authorized User. Upon termination you must stop all use of the Materials
+   and delete or destroy all copies in your possession or control. Sections 1,
+   3, 4, 6 and 7 survive termination.
+
+6. NO WARRANTY
+
+   THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. TO THE MAXIMUM EXTENT
+   PERMITTED BY APPLICABLE LAW, ATRUVIA AG SHALL NOT BE LIABLE FOR ANY CLAIM,
+   DAMAGES OR OTHER LIABILITY ARISING FROM OR IN CONNECTION WITH THE MATERIALS
+   OR THEIR USE.
+
+7. GOVERNING LAW
+
+   This License is governed by the laws of the Federal Republic of Germany,
+   without regard to its conflict-of-laws rules. The exclusive place of
+   jurisdiction, to the extent permitted by law, is Karlsruhe, Germany.
+
+For permissions beyond the scope of this License, contact Atruvia AG.

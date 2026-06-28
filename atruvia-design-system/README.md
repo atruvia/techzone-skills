@@ -1,221 +1,287 @@
 # Atruvia Design System
 
-Ein einsatzbereites Design System für die **Atruvia AG** — den Digitalisierungspartner der genossenschaftlichen Bankengruppe Deutschlands (Volksbanken Raiffeisenbanken). Nutze dieses Skill, um gut gebrandete Oberflächen, Präsentationen und Mockups in der visuellen Sprache von Atruvia zu erstellen.
+Ein selbst-hostbares Design-System, das die Marke der **Atruvia AG** abbildet –
+des Digitalisierungspartners der **Genossenschaftlichen FinanzGruppe Volksbanken
+Raiffeisenbanken**. Es bündelt Typografie, Farbsystem, Spacing, Motion,
+wiederverwendbare React-UI-Komponenten sowie vollflächige Produkt-Nachbauten,
+damit Design-Agents marken­konforme Interfaces und Assets erzeugen können.
+
+> **Status: vollständig auf offiziellen Markenassets.** Schriften, Logos,
+> Icon-Sprite und Fotografie sind eingebunden; die Farbwerte sind direkt aus dem
+> Live-Stylesheet (`main.css`) von atruvia.de extrahiert. Verbleibende
+> Kleinigkeiten sind unter **§ 6 Hinweise & offene Punkte** vermerkt.
 
 ---
 
-## Index — was in diesem Ordner liegt
+## 1. Unternehmens- & Markenkontext
 
-```
-README.md                   ← du bist hier
-SKILL.md                    ← Skill-Manifest (Claude Code kompatibel)
-colors_and_type.css         ← Marken-Tokens (CSS-Variablen)
+Die Atruvia AG entstand am **1. September 2021** aus der Fusion der **Fiducia &
+GAD IT AG** und positionierte sich neu – vom „IT-Dienstleister“ zum
+**„Digitalisierungspartner“** innerhalb der Genossenschaftlichen FinanzGruppe.
+Die Wurzeln reichen bis **1924** (Gründung der Fiducia in Karlsruhe) und **1963**
+(GAD in Münster) zurück – über ein Jahrhundert Banken-IT-Erfahrung.
 
-assets/                     ← Logos, Marken, Icons (echte SVGs)
-  atruvia-logo.svg          ← offizielle Wortmarke + VIA-Mark, von Wikimedia Commons
-  bvr-logo.svg              ← Partner: Bundesverband Volksbanken Raiffeisenbanken
-  bvr-logo-neu.svg          ← Partner: BVR (aktuelle abgerundete Variante)
-  via-line.svg              ← rekonstruiertes VIA-Linien-Motiv für Layouts
-  via-mark.svg              ← isoliertes VIA-Symbol (die Mark aus der Wortmarke)
+- **Leistungen:** Betrieb von Hochsicherheits-Rechenzentren und des
+  Bankverfahrens (historisch *agree21*, heute im Umbau zur offenen,
+  cloud-basierten Plattformarchitektur), Entwicklung der **VR-BankingApp** sowie
+  Betrieb von Geld-/Selbstbedienungs­geräten für die Genossenschaftsbanken.
+- **Größenordnung:** ~8.400 Mitarbeiter*innen; ~1,77 Mrd. € Konzernumsatz;
+  ~820 Volksbanken und Raiffeisenbanken sowie Privatbanken und weitere
+  Unternehmen (u. a. ADAC) als Kund*innen; ~91 Millionen Konten und ~153.000
+  Bankarbeitsplätze.
+- **Markenidee (KMS Team, 2021):** *„Wir verbinden. Füreinander.“* Die Marke
+  vereint zwei Welten: **gemeinschaftliches, menschliches, genossenschaftliches
+  Denken** und **wegweisende Finanztechnologie**. Visuell ausgedrückt durch
+  **weiche Rundungen, die auf eckige Details treffen** – Mensch + Technologie.
+- **Die „VIA-Line“:** das zentrale, prägende Gestaltungselement – eine
+  verbindende Linie, die Komponenten, Abschnitte und Ideen miteinander verknüpft.
+  Sie ist das visuelle Rückgrat der Identität (und inspirierte sogar den „Via
+  Sound“ der Audio-Identität).
+- **Positionierungs-Wörter von der Website:** *Smart. Agil. Bewusst. Effizient.
+  Interaktiv. Intuitiv.* Claim-Cluster: *einfach. sicher. digital.*
 
-fonts/                      ← Atruvia woff2, direkt vom CDN geladen (siehe CSS)
+### Verwendete Quellen
+Die folgenden Quellen wurden zum Aufbau genutzt und sind zur Nachvollziehbarkeit
+dokumentiert.
 
-preview/                    ← Karten, gerendert im Design-System-Tab
-ui_kits/atruvia-website/    ← hochauflösendes UI-Kit, das atruvia.de nachbildet
-_research/                  ← Scratch-Referenzen (nicht Teil des Systems)
-```
-
----
-
-## Quellen
-
-- **Live-Seite:** https://atruvia.de — beobachtet, aber nicht vollständig scrapebar (CORS/X-Frame blockieren das iframe)
-- **Marken-Case-Studies (gelesen):**
-  - https://www.kms-team.com/en/cases/atruvia/ — KMS TEAM (Designagentur)
-  - https://www.carlet.studio/work/atruvia — Patrick Carlet (Design Director, KMS)
-  - https://rebrand.com/2024-atruvia/ — REBRAND-Award-Bericht
-  - https://www.german-brand-award.com/en/the-winners/gallery/detail/41005-atruvia-ag.html
-  - https://www.whydobirds.de/en/cases/atruvia-audio-branding — Via Sound
-- **Logo-Quelle:** https://commons.wikimedia.org/wiki/File:Atruvia_logo.svg (in `assets/` heruntergeladen)
-- **Marke-Seite:** https://atruvia.de/unternehmen/wir-sind-atruvia/marke
-
-Das Wikimedia-Logo-SVG war das einzige autoritative Markenasset, das ich direkt ziehen konnte — sowohl das CDN von atruvia.de als auch der Brandfetch-Eintrag blockierten Cross-Origin-Fetches. **Die nutzende Person sollte hochauflösendere Dateien einsetzen** (vollständige Wortmarken-Varianten, Via-Sound-Assets, Fotografie), sofern verfügbar.
-
----
-
-## INHALTLICHE GRUNDLAGEN
-
-Atruvia schreibt auf **Deutsch**, mit einem warmen, gemeinschaftlichen, leicht formellen Ton. Das System baut auf einigen spezifischen Sprachmustern auf:
-
-### Stimme & Ton
-
-- **„Wir", nicht „ich".** Die erste Person Plural ist der Standard. Das Kollektiv spricht.
-- **„du" (informell), nicht „Sie" (formell).** Modern, nahbar. Karriere- und Markenseiten sprechen die Lesenden mit `du`/`dir`/`dich` an. Bemerkenswert für ein 100 Jahre altes Banken-IT-Unternehmen.
-- **Inklusives, gendergerechtes Deutsch mit Stern.** *Kund\*innen, Mitarbeiter\*innen, Kolleg\*innen, Vorständ\*innen, Partner\*innen.* Das ist markenübergreifend nicht verhandelbar — der Gender-Stern ist Hausstil und Atruvia hat eine öffentliche „Gender-Hinweis"-Seite, die ihn erklärt.
-- **Kurze, deklarative Sätze.** Überschriften sind klare Aussagen: *„Wir sind Atruvia."* — *„Verbindungen zu schaffen ist der Kern unserer Dienstleistung."* — *„Füreinander in eine bessere Zukunft."*
-- **Wiederholung für Rhythmus.** Wörter wie *Wir, Füreinander, Verbindung, gemeinsam* werden bewusst wiederholt. *„Füreinander. Für uns. Für unsere Partner\*innen und Kund\*innen."*
-- **Keine Ausrufezeichen, kein Marketing-Sprech.** Selbstbewusst, ruhig. Selbst die mobilisierenden Zeilen wirken zurückhaltend.
-- **Fette Einleitungen**, um thematische Absätze einzuführen (z. B. **„Verbindungen zu schaffen ist der Kern unserer Dienstleistung."** gefolgt von der Erläuterung).
-
-### Schreibweise & Interpunktion
-
-- **Gemäßigte Kleinschreibung (Sentence Case)** für Überschriften und Fließtext. Das Logo ist die seltene Ausnahme in Großbuchstaben (**ATRUVIA**).
-- **Deutsche Anführungszeichen** für Zitate: »Zitat« — *nicht* "gerade" oder „englisch-kursive" Variante.
-- **Title-Case bei Navigationspunkten**, wenn kurz (*Karriere, Unternehmen, Leistungen, News, Kontakt, Newsroom*).
-- Zahlen in Überschriften werden sachlich verwendet, nicht zur Übertreibung: *10 Teams · 18 Teammitglieder · 170 Meetings · 20.000 Tassen Kaffee*. Der freche letzte Eintrag ist Absicht — *etwas Wärme in den Daten*.
-
-### Vibe / Persona
-
-Die Stimme ist **eine erfahrene Kollegin, die dich willkommen heißt** — selbstbewusst, plural, nie aufdringlich. Nicht die quirlige Startup-Stimme, nicht die steife Bank-Stimme. **Genossenschaftsbank-Energie: ernstes Geld, warme Menschen.**
-
-### Beispiele (wörtlich von atruvia.de)
-
-> *Unser Unternehmen steht für Gemeinschaft, Zugehörigkeit und eine gemeinsame Vision. Bei uns steht das „Wir" im Vordergrund.*
-
-> *Atruvia ist der Aufbruch in eine neue Zeit.*
-
-> *Und was erwartest **du** von Atruvia?*
-
-### Emoji
-
-**Wird nicht verwendet auf Markenoberflächen.** Keine Emoji in Überschriften, Fließtext oder Navigation. (Social-Media-Posts des Karriere-Teams nutzen sie ggf. informell — nicht die Unternehmensseite.)
-
-### Englisch als Rückfallebene
-
-Wenn Englisch benötigt wird (internationale Presse, Awards), übertragen sich dieselben Prinzipien: **„We connect. For each other."** Weiterhin plural, weiterhin zurückhaltend. Englisch nur verwenden, wenn das Publikum eindeutig nicht deutschsprachig ist.
+- **Live-Unternehmenswebsite:** https://atruvia.de (und `/en`)
+- **Unternehmensgeschichte (Texte + Fotografie):**
+  https://atruvia.de/unternehmen/unternehmensgruppe/geschichte
+- **Live-Stylesheet** (Farb-Extraktion): eine Kopie liegt unter
+  `assets/brand/atruvia-site.css`.
+- **Markenstrategie / Identitäts-Hintergrund:** KMS-Team-Case-Study
+  (kms-team.com/en/cases/atruvia), German Brand Award, REBRAND.
+- **Offizielle Assets bereitgestellt:** ATRUVIA-Schriftfamilie, Logo-SVGs,
+  Icon-Sprite und Fotografie (alle in `assets/`).
 
 ---
 
-## VISUELLE GRUNDLAGEN
+## 2. INHALTLICHE GRUNDLAGEN — wie Atruvia schreibt
 
-### Farben — verifiziert anhand des Live-CD
+**Tonalität:** warm, menschlich, selbstbewusst, klar. Stolz auf die Tradition,
+aber zukunftsgewandt. Technologie steht immer im Dienst des Menschen („Human in
+the Loop“, *„Mensch und Maschine im Tandem“*). Vermeidet Hype und Fachjargon;
+erklärt verständlich.
 
-Die tatsächliche Markenpalette von Atruvia ist **kleiner und kräftiger als bei typischen Unternehmenssystemen**: reinweiße Flächen, tiefes Navy überall (Überschriften UND Fließtext), ein einzelnes helles Royalblau als Akzent für Links und ein sanftes Cyan für Icon-Button-Flächen. Kein Koralle, kein Waldgrün, keine warmen Neutraltöne — das waren meine früheren Vermutungen und wurden entfernt.
+- **Ansprache:** direkt und informell – das deutsche **„du“** („Geh mit uns auf
+  eine Zeitreise“). Über das Unternehmen wird in der **„wir“**-Form gesprochen.
+- **Groß-/Kleinschreibung:** normale Schreibung in Fließtext und den meisten
+  Überschriften. Die Wortmarke **ATRUVIA** steht in Versalien (nur im Logo).
+  Kurze, staccato-artige Adjektiv-Dreiklänge sind ein Motiv: *„einfach. sicher.
+  digital.“* – kleingeschrieben, mit Punkten zwischen Einzelwörtern.
+- **Satzrhythmus:** mischt prägnante Fragmente mit längeren, erklärenden
+  Absätzen. Mag Kontrastpaare („traditionell und innovativ, eckig und rund“).
+- **Inklusive Sprache:** durchgängig gendersensibel mit Asterisk –
+  **„Mitarbeiter\*innen“, „Kund\*innen“, „Berater\*innen“** (es gibt einen
+  eigenen *Gender-Hinweis*). Bei deutschen Texten unbedingt übernehmen.
+- **Emoji:** **werden nicht verwendet** in der Unternehmens­kommunikation.
+- **Zahlen als Beleg:** große, runde Zahlen als Vertrauenssignal – „91 Millionen
+  Konten“, „153.000 Bankarbeitsplätze“. Deutsche Zahlenformatierung (Punkt als
+  Tausender-, Komma als Dezimaltrennzeichen): `26,5 %`, `1,77 Milliarden`.
+- **Ton-Beispiele (wörtlich):**
+  - *„Keine Zukunft ohne Wandel.“*
+  - *„Wir verbinden. Füreinander.“*
+  - *„Banking muss einfach und sicher sein.“*
+  - *„Das Beständige bleibt der Wandel.“*
 
-| Token | Hex | Verwendung |
-|---|---|---|
-| `--atr-navy` | `#000064` | Primäre Marke — Logo, Überschriften **und Fließtext** |
-| `--atr-blue` | `#0a5ae1` | Akzent — Links, **primäre Buttons**, Icon-Glyphen |
-| `--atr-coral` | `#fd5f4c` | **Farbe der VIA-Linie** — nur für das verbindende Grafikelement |
-| `--atr-cyan-soft` | `#d4f2f5` | **Abschnitts-Hintergrundfläche** (sehr häufig — z. B. Werte-Seite, Ansprechpartner) |
-| `--atr-navy-deep` | `#00004A` | Hover- / Pressed-Zustände auf Navy |
-| `--atr-navy-20` | `rgba(0,0,100,0.2)` | Pager- / Overlay-Hintergründe (laut CD) |
-| `--atr-white` | `#FFFFFF` | Seitenhintergrund |
-| `--atr-line` | `#D6DCE9` | Rahmen, Trennlinien (kühl, nicht warm) |
-| `--atr-ink` | `#000064` | Fließtext — identisch mit Navy (Absatzfarbe des CD) |
-| `--atr-ink-2` | `#4B4B85` | Sekundärtext |
-
-**Quelle:** Live-CSS-Custom-Properties von atruvia.de, bestätigt durch eine\*n Atruvia-Mitarbeiter\*in. Koralle und Cyan-soft zusätzlich bestätigt durch Pixel-Sampling aus Live-Site-Screenshots, die die nutzende Person bereitgestellt hat.
-
-### Typografie — verifiziert, echte Schriften eingebunden
-
-Die Schriftart der Marke ist eine **eigens entwickelte Schrift namens *Atruvia*** — eine geometrische, humanistische Grotesk in vier Schnitten:
-
-- **Light 300**, **Regular 400**, **Medium 500**, **Bold 700**
-
-Die Schriften werden direkt von `https://atruvia.de/assets/fonts/atruvia-*.woff2` per `@font-face` in `colors_and_type.css` geladen. **Manrope (Google Fonts) ist der Offline-/Blockiert-Fallback** — sie springt automatisch ein, wenn das Atruvia-CDN nicht erreichbar ist.
-
-Laut CD nutzen **Seitentitel standardmäßig den Schnitt 300 (Light)**, während **Abschnittstitel 700 (Bold)** verwenden — live beobachtet auf *Kontakt*, *Werte* und den Abschnittsüberschriften. Die Hero-Titel von „Kontakt" und „Werte" sind luftig, fast geometrisch, in Light. Abschnittsüberschriften wie „Falls du Fragen…", „Banking mit der Omnikanalplattform", „Ansprechpartner" sind kräftig in Bold.
-
-- **Seitentitel / Hero:** Atruvia 300 (Light), groß, clamp-skaliert. Zentriert oder linksbündig. Immer Navy.
-- **Abschnittstitel (h2, h3):** Atruvia 700 (Bold), engere Skalierung.
-- **Fließtext:** Atruvia 400, 18px (CD-Baseline), Zeilenhöhe 1,5. Farbe: Navy.
-- **Links:** Atruvia 400, Farbe `--atr-blue`, **standardmäßig unterstrichen** (1,5px, 3px Offset). Hover → Farbe wechselt zu `--atr-navy`.
-- **Mono / Numerik** (für Daten/Tabellen): JetBrains Mono — ersetzt das, was Atruvia intern verwendet. Bitte markieren, falls die echte Schrift bekannt ist.
-
-### Hintergründe & Bildwelt
-
-- **Warme, natürliche Fotografie.** Wälder, Tageslicht, echte Menschen. Nicht stock-corporate-glänzend. Der Hero der Seite ist buchstäblich ein Waldstandbild aus einem Markenfilm.
-- **Vollflächige (full-bleed)** Bildnutzung auf Landingpages. Fotos reichen von Kante zu Kante.
-- **Avatar-Kreise** für Porträts (Interview-Karten der Vorständ\*innen).
-- **Keine Verläufe auf Schrift oder Markenflächen.** Solide Farben mit fotografischen Akzenten.
-- **Kein Illustrationssystem auf der Marketingseite** — das visuelle Gewicht liegt auf Fotografie + Wortmarke/VIA-Linie.
-
-### Die VIA-Linie (primäres Designelement) — Koralle
-
-Die VIA-Linie ist die Signatur-Grafik der Marke: **ein durchgehender Korallen-Strich (`#fd5f4c`)**, der Wörter, Abschnitte oder Inhalte verbindet. Sie mischt gerade kantige Segmente mit weichen, geschwungenen Bögen und kleinen Schlaufen — und verkörpert so die Spannung „Mensch + Technologie".
-
-Beobachtet im Einsatz auf der **Werte**-Seite: fünf Werte (*Füreinander, Respektvoll, Offen & Ehrlich, Ergebnisorientiert, Eigenverantwortlich*) werden durch eine einzige Korallen-Linie physisch verbunden, die sich biegt, verzweigt und schlängelt.
-
-Strichstärke: **3–4px**, immer Koralle, auf Weiß oder Cyan-soft. Niemals Blau oder Navy für die VIA-Linie verwenden — sie ist immer Koralle. Mit vollen Pixelstärken sowie `stroke-linecap="round"` und `stroke-linejoin="round"` rendern.
-
-### Layout & Abstände
-
-- **8px-Grundeinheit.** Alle Abstände rasten auf Vielfache von 8 ein (8, 16, 24, 32, 48, 64, 96, 128).
-- **Großzügiger Weißraum.** Die Marke-Seite lässt viel Luft zwischen den Abschnitten.
-- **Einspaltig auf Mobil, großzügig zweispaltig auf Desktop.** Keine dichten Raster.
-- **Maximale Inhaltsbreite** ~ 1200–1280px, zentriert.
-
-### Eckenradien
-
-- **Dezent.** Atruvia ist keine „alles weich abgerundete" Marke — hier zeigt sich die kantige Seite der DNA.
-- Buttons: **999px (Pill)** — volle Rundung, hier zeigt sich die weiche Seite.
-- Karten: **8–12px**.
-- Bilder: **0px** (volle Ecken) für redaktionelle Fotografie; **12px** für Thumbnails in Karten.
-
-### Schatten & Elevation
-
-- **Minimal.** Banken-IT-Zurückhaltung — keine dramatischen Schatten.
-- `--shadow-soft`: `0 1px 2px rgba(0,0,100,0.04), 0 4px 12px rgba(0,0,100,0.06)` — kaum merkliche Karten-Anhebung.
-- `--shadow-pop`: `0 8px 24px rgba(0,0,100,0.12)` — nur für Menüs / Dropdowns / Modals.
-- Keine inneren Schatten.
-
-### Rahmen
-
-- **1px solid `--atr-line`** für kühl-graustufige Trennlinien.
-- Die VIA-Linie ist eine *Grafik*, kein Rahmen — nicht verwechseln.
-
-### Hover- / Press-Zustände
-
-- **Buttons (primär Navy):** Hover → `--atr-navy-deep` (8 % dunkler). Keine Skalierung, keine Schattenänderung. Press → 96 % Skalierung und leichte Farbverschiebung.
-- **Buttons (Outline):** Hover → Füllung mit Navy bei 6 % Deckkraft. Press → 12 % Deckkraft.
-- **Links:** Unterstreichung bei Hover. Farbe bleibt Navy.
-- **Karten:** sehr dezenter `--shadow-soft` bei Hover, keine Bewegung.
-- **Kein Tilt, kein 3D, keine federnden Springs.** Atruvia ist ruhig.
-
-### Animation
-
-- **Dezent, kurz.** 150–250ms Übergänge. `cubic-bezier(0.4, 0, 0.2, 1)` ist das Standard-Easing.
-- **Fades statt Slides.** Seitenabschnitte blenden ein; Slider nutzen Opacity-Crossfades, keine Whoosh-Übergänge.
-- **Die VIA-Linie zeichnet sich.** Bei Animation wird das VIA-Linien-Motiv *gezeichnet* (stroke-dashoffset-Animation) über 600–1200ms — langsam, bewusst.
-- **Keine Bounces, keine Springs, keine Parallax.**
-
-### Transparenz & Blur
-
-- **Selten.** Die Marke setzt nicht auf Glasmorphismus. Die eine häufige Nutzung: ein dünnes **weißes Overlay** (Alpha 0,7) auf Hero-Fotografie hinter Navy-Text, um den WCAG-Kontrast zu wahren. Keine Backdrop-Blur-Stapel.
-
-### Bildwelt-Farbstimmung
-
-- **Warm.** Tageslicht, goldene Stunde, warme Innenraumtöne.
-- **Echte Menschen, kein Stock.** Mitarbeiter\*innen, Führungskräfte, Kund\*innen, fotografiert als sie selbst.
-- **Wald / Outdoor häufig.** Unterstreicht die Botschaft „in der Gemeinschaft verwurzelt".
-- Kein S/W, kein starkes Korn, keine extreme Sättigung. Redaktionell-fotografische Neutralität.
+**Do:** Menschen und Sinn voranstellen; konkrete Belege nutzen; einfach, sicher,
+menschlich bleiben. **Don’t:** Buzzwords stapeln, bei KI überversprechen
+(„ersetzen kann und soll KI den Menschen nicht“), Emoji verwenden oder den
+inklusiven Asterisk im Deutschen weglassen.
 
 ---
 
-## IKONOGRAFIE
+## 3. VISUELLE GRUNDLAGEN
 
-- **Keine proprietäre Icon-Schrift erkennbar.** Die Marketingseite atruvia.de nutzt sehr wenige Icons — es ist ein *fotogeführtes* Design System. Wo Icons auftauchen (Social, Video-Play, Navigations-Chevrons), sind es schlichte Linien-Glyphen, ~1,5–2px Strichstärke, Navy auf hell oder Weiß auf dunkel.
-- **Für dieses Skill standardisieren wir auf [Lucide](https://lucide.dev/)** — Open-Source, 1,5px Strichstärke, geometrisch und passend zur ruhigen/kantigen Seite der Marke. Geladen per CDN: `https://unpkg.com/lucide@latest`.
-- **Substitutions-Hinweis:** Falls die internen Produkt-UIs von Atruvia (z. B. Banking-Back-Office, agree21-Admin-Tools) ein bestimmtes Icon-Set verwenden, Lucide dagegen tauschen. Lucide ist ein Platzhaltersystem, keine bestätigte Marke.
-- **Keine Emoji auf Markenoberflächen.**
-- **Keine Unicode-als-Icon-Hacks** (kein ▸ ★ ✓ etc.). Lucide verwenden.
-- **Das Logo ist heilig.** `assets/atruvia-logo.svg` ist die Quelle der Wahrheit. Das VIA-Linien-Motiv (`assets/via-line.svg`) und die isolierte Mark (`assets/via-mark.svg`) sind für Layout-Flexibilität rekonstruiert.
+**Das Kernmotiv – Rundungen + Kanten.** Alles balanciert weiche, großzügige
+Rundung (menschlich) gegen vereinzelte scharfe, eckige Details (Technologie). Die
+Eckenradien sind überwiegend groß; einige Akzente bleiben bewusst scharf
+(`--radius-none`). Die **VIA-Line** (eine dünne, gerundete Verlaufslinie) ist das
+wiederkehrende Verbindungselement – unter Überschriften, zwischen Abschnitten,
+zur Darstellung von Beziehungen.
+
+**Farbe.** Aus dem Live-`main.css` extrahiert:
+- **Navy** (`--atr-ink-900` = `#000064`) – primäre Markenfarbe / Ink / dunkle
+  Flächen.
+- **Blau** (`--atr-blue-500` = `#0a5ae1`) – primäre Aktion, Links, Fokus
+  (entspricht `--button-color` der Website).
+- **Aqua** (`--atr-aqua-100` = `#d4f2f5`) – Fläche für sekundäre / Icon-Buttons;
+  sanfter Marken-Ton.
+- **Coral** (`--atr-coral-500` = `#ff5a46`) – warmer Akzent / `--color-danger`.
+- **Polar** (`--atr-polar` = `#f2fafc`) – charakteristisches, kühles Beinahe-Weiß.
+- **Signatur-Verlauf** `--atr-via-gradient`: Navy → Blau → Aqua, die „Verbindung“
+  sichtbar gemacht. Auf Fotos nutzt die Website Navy→transparent-Schutzverläufe
+  (nie ein vollflächiger dekorativer Verlaufs-Hintergrund).
+- Hintergründe sind überwiegend **weiß / sehr helles, kühles Grau**
+  (`--atr-gray-050`), klar und luftig. Inverse Abschnitte nutzen Navy.
+
+**Typografie.** Die markeneigene Schrift **ATRUVIA** (alias „VIA Type“) übernimmt
+Display + UI (selbst gehostet, 7 Schnitte inkl. dediziertem Display-Cut;
+Familienname `ATRUVIA` wie auf der Website), **ATRUVIA Mono** für Daten/Zahlen.
+Display ist **extrafett, eng laufend, eng zeilig**; Fließtext regular mit
+entspannter Zeilenhöhe. Eyebrows/Overlines sind **Versalien, weit laufend,
+halbfett**, in Blau.
+
+**Bildwelt.** Echte, warme, menschliche Fotografie – Menschen an modernen
+Arbeitsplätzen, der Campus Karlsruhe, dazu archivische Schwarz-Weiß-/Sepia-Motive
+aus der Firmengeschichte (Lochkarten, Großrechner, der Geldautomat von 1979). Der
+Ton ist natürlich und optimistisch, nicht hochglanz-korporativ. Vollflächige
+Foto-Header und Galerie-Raster sind üblich. Farbe für „heute“, Monochrom/gealtert
+für „Geschichte“.
+
+**Layout.** Zentrierter Container mit max. Breite (~1240px), großzügiger
+vertikaler Rhythmus, klare Hierarchie. Inhaltsorientiert, viel Weißraum. Die
+VIA-Line leitet Abschnitte ein und verbindet Spalten.
+
+**Elevation & Flächen.** Weiche, kontrastarme, kühl getönte Schatten
+(`--shadow-md/lg`) – nie hartes Schwarz. Karten: weiße Fläche, großer Radius
+(`--radius-lg`), dezente Border *oder* weicher Schatten (nicht beides kräftig).
+Vertiefte Bereiche nutzen `--atr-gray-050` bzw. Polar.
+
+**Borders.** Haarfeines, kühles Grau (`--border-subtle/default`), 1px Standard.
+Marken-Border (`--border-brand`) für selektierte/aktive Zustände.
+
+**Motion.** Geschmeidig und souverän, **nie federnd**. Sanftes Ease-out
+(`--ease-standard`), kurze Dauern (120–320 ms). Fades und kleine Versätze; die
+VIA-Line kann Verlauf/Länge animieren, um „Verbinden“ auszudrücken.
+`prefers-reduced-motion` respektieren.
+
+**Interaktionszustände.**
+- *Hover:* primäre Aktion wird eine Stufe dunkler; neutrale Flächen gehen auf
+  `--atr-gray-050`; Links werden dunkler.
+- *Press/Active:* eine weitere Stufe dunkler; dezentes Verkleinern (≈0,98)
+  erlaubt, kein Bounce.
+- *Fokus:* 3px blauer Fokusring (`--focus-ring`), stets sichtbar (Barrierefrei­heit
+  ist im Banking zentral).
+- *Disabled:* reduzierte Deckkraft, neutrale Füllung, kein Schatten.
+
+**Transparenz / Blur.** Sparsam – z. B. ein transluzenter Sticky-Header über
+Inhalt. Kein Hauptmotiv; dezent halten.
 
 ---
 
-## HINWEISE — bitte lesen
+## 4. IKONOGRAFIE
 
-1. **Fotografie ist Platzhalter.** Ich kann die Hero-Fotografie von atruvia.de wegen CORS nicht ziehen — das UI-Kit nutzt an Stellen, wo Fotos stünden, kühle Verlaufsflächen, klar gekennzeichnet.
-2. **Hero- / Detailseiten-UI ist angenähert.** Ich konnte die Live-Seite nicht im iframe laden (X-Frame-Options blockiert das Einbetten). Layout-Entscheidungen basieren auf dem gelesenen Live-HTML plus Screenshots aus öffentlichen Case-Studies. **Gegen die Live-Seite gegenprüfen und mir sagen, was nicht stimmt.**
-3. **Mono-Schrift ist ersetzt** (JetBrains Mono). Ich kenne die Daten-Tabellen-Schrift von Atruvia nicht — markieren und ersetzen, falls es eine echte gibt.
-4. **Kein agree21- / internes Produkt-UI.** Dieses System deckt nur die öffentliche Marketing-Marke ab. Die internen Bankprodukte (agree21, VR-Bank-Apps) sind ein separates visuelles System, zu dem ich keinen Zugang habe.
-5. **Schriftdateien sind selbst gehostet.** Die vier Atruvia-woff2-Schnitte liegen in `fonts/` und werden per `@font-face` in `colors_and_type.css` mit relativen URLs geladen. Funktioniert offline.
+> ✅ **Offizielles Set eingebunden.** Das Atruvia-Icon-**Sprite** (60 Symbole)
+> liegt unter `assets/icons/atruvia-icons.svg`; Einbindung über die
+> `Icon`-Komponente (`<Icon name="robot" />`) oder `<use href="…#icon-name">`.
+> Die Symbole sind gefüllte Glyphen, eingefärbt über `currentColor`.
+
+- **Stil:** überwiegend **gefüllte** Piktogramme (keine Haarlinien), mit der
+  weich-eckigen Silhouette der Marke. Einige Outline-Varianten existieren.
+- **Farbe:** erbt die Textfarbe (`currentColor`); Blau bei Interaktion/aktiv.
+- **Größen:** 20px in dichten UIs, 24px Standard, 32–40px für Feature/Marketing.
+- **Set-Highlights:** `robot`, `shaking-hands`, `hand-leaf`, `ecosystem`,
+  `database`, `smartphone`, `idea`, `routes`, `entry-point`, `quote`, komplette
+  Pfeil-/Caret-Familie, Status (`success`/`warning`/`error`/`info`) sowie Social
+  (`linkedin`/`instagram`/`facebook`/`twitter`/`xing`/`youtube`).
+- **Emoji:** werden nie als Iconografie verwendet.
+- **Logos & Markenzeichen:** die **ATRUVIA-Wortmarke** (`Logo`-Komponente) und
+  das **FinanzGruppe-Lockup** in `assets/logos/`. Schutzraum wahren, nicht
+  umfärben, nicht verzerren.
+
+Verwendung: `<Icon name="arrow-right" size={24} />` (Design-System-Komponente)
+oder in reinem HTML
+`<svg><use href="assets/icons/atruvia-icons.svg#icon-arrow-right"></use></svg>`.
 
 ---
 
-## So nutzt du dieses System
+## 5. Index / Manifest
 
-Wenn du ein\*e KI-/Claude-Agent bist: Lies dieses README, dann `colors_and_type.css`. Sieh dir die Karten in `preview/` an, öffne das UI-Kit unter `ui_kits/atruvia-website/index.html` und kopiere Assets aus `assets/` in deinen Output. Erfinde keine neuen Farben oder Schriften — nutze die Tokens.
+Vom Compiler erwarteter Wurzel-Einstieg:
+- **`styles.css`** – globaler Einstieg (ausschließlich eine `@import`-Liste).
 
-Wenn du ein Mensch bist: Öffne den Design-System-Tab in der Projekt-Sidebar, um jede Komponente auf einen Blick zu sehen.
+Grundlagen:
+- **`tokens/colors.css`** – Palette + semantische Aliase (Navy/Blau/Aqua/Coral)
+- **`tokens/typography.css`** – ATRUVIA-Familien, Skala, Schnitte, Rollen
+- **`tokens/spacing.css`** – 8px-Spacing-Skala + Layout
+- **`tokens/radius.css`** – Eckenradien (Rundungen + Kanten)
+- **`tokens/shadows.css`** – weiche Elevation
+- **`tokens/motion.css`** – Easing + Dauern
+- **`tokens/base.css`** – Element-Resets + Marken-Helfer (`.atr-eyebrow`,
+  `.atr-via-line`, `.atr-via-text`, `.atr-container`)
+- **`fonts/fonts.css`** – Webfont-Laden (`@font-face`, selbst gehostet)
+
+Assets:
+- **`assets/brand-assets.md`** – Asset-Manifest / Bezugsquellen (zur
+  Nachvollziehbarkeit)
+- **`assets/fonts/`** – ATRUVIA-Schriftdateien · **`assets/logos/`** – Logos ·
+  **`assets/icons/`** – Icon-Sprite · **`assets/photos/`** – Fotografie ·
+  **`assets/brand/`** – Original-Site-CSS
+
+Specimen-Karten (Tab „Design System“): unter `guidelines/` – Colors, Type,
+Spacing, Brand.
+
+**Komponenten** (`components/`, React; Einbindung über `_ds_bundle.js`, Namespace
+`window.AtruviaDesignSystem_79ca21`):
+- `core/` – Button, IconButton, Icon, Logo
+- `forms/` – Input, Textarea, Select, Checkbox, Radio, Switch
+- `feedback/` – Badge, Tag, Alert, Avatar
+- `surfaces/` – Card, Tabs, Dialog
+
+Jede Gruppe hat ein `*.card.html`-Specimen (Tab „Design System“ → Components);
+die Komponenten tragen `.d.ts`-Verträge, mehrere sind als Startpunkte markiert.
+
+**UI-Kits** (`ui_kits/`):
+- `website/` – interaktiver Nachbau der atruvia.de-Unternehmenswebsite
+  (`index.html` + `sections.jsx`, mit eigener README).
+
+**Templates** (`templates/`):
+- `landing-page/` – Marken-Landingpage als Design-Component (`LandingPage.dc.html`).
+
+Es sind keine Beispiel-Slides enthalten – es wurde kein Slide-Template
+bereitgestellt.
+
+---
+
+## 6. Hinweise & offene Punkte
+
+✅ **Erledigt (offizielle Assets + extrahierte Werte vorhanden):**
+- **Schrift:** die **ATRUVIA**-Familie (alle 7 Schnitte inkl. Display + Mono)
+  selbst gehostet in `assets/fonts/`; `fonts/fonts.css` lädt sie via `@font-face`
+  (Familienname `ATRUVIA` wie auf der Website).
+- **Farben:** die vollständige Palette ist **aus dem Live-`main.css` extrahiert**
+  (Navy `#000064`, Blau `#0a5ae1`, Aqua `#d4f2f5`, Coral `#ff5a46`, Polar
+  `#f2fafc`, dazu Grautöne + Status). Eine Kopie des Quell-CSS liegt unter
+  `assets/brand/atruvia-site.css`. Die semantischen Rollen spiegeln die
+  `--button-*` / `--color-*`-Properties der Website. (Nur einige wenige
+  Ramp-Abstufungen sind ~abgeleitet.)
+- **Logos:** offizielle ATRUVIA-Wortmarke + FinanzGruppe-Lockups in
+  `assets/logos/`; die `Logo`-Komponente bettet die echte Wortmarke inline ein
+  (umfärbbar via `currentColor`).
+- **Icons:** das offizielle 60-Icon-Sprite liegt in `assets/icons/`; Einbindung
+  über die `Icon`-Komponente.
+- **Fotografie:** Hero, Team, Rechenzentrum, Portrait, „Julia“-Freisteller,
+  Magazin sowie das Heritage-Set liegen in `assets/photos/` und sind im UI-Kit
+  sowie im Template eingebunden.
+
+⚠ **Kleinere offene Punkte:**
+1. **VIA-Line-Verlauf** (`Navy → Blau → Aqua`) ist eine markenkonforme
+   Komposition aus den echten Website-Farben; das gedruckte CD-Manual könnte
+   exakte Verlaufs-Stops für einen 1:1-Abgleich vorgeben.
+2. Einige optionale Heritage-Galeriebilder sind noch nicht eingebunden – siehe
+   `assets/brand-assets.md`.
+
+---
+
+## 7. Lizenz
+
+**Proprietär – kein Open Source.** © 2026 Atruvia AG. Alle Rechte vorbehalten.
+
+Dieses Design-System und sämtliche enthaltenen Materialien (Markenassets, Logos,
+VIA-Line, Schriften, Icons, Farben, Fotografie, Tokens, Komponenten, Templates
+und Dokumentation) sind vertrauliches und geschütztes Eigentum der Atruvia AG.
+Die Nutzung ist **ausschließlich** gestattet,
+
+- wenn sie durch eine **berechtigte Person** erfolgt (aktuelle*r Mitarbeiter*in
+  der Atruvia AG bzw. unter schriftlichem Vertrag mit Atruvia tätige Personen),
+  **und**
+- wenn sie einem **Atruvia-Zweck** dient (Produkte, Services und Markenauftritte
+  der Atruvia AG bzw. der Genossenschaftlichen FinanzGruppe im offiziellen
+  Auftrag).
+
+Jede Nutzung in privaten, freiberuflichen, kunden- oder fremdbezogenen Projekten
+ist untersagt. Eingebundene Drittanbieter-Materialien (z. B. Hanken Grotesk,
+IBM Plex Mono, Lucide, React) unterliegen weiterhin ihren eigenen Lizenzen.
+
+Vollständige Bedingungen siehe [`LICENSE`](./LICENSE).

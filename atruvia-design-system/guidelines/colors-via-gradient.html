@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="VIA Line gradient" subtitle="The signature navy→blue→aqua connecting gradient" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 22px; background: var(--surface-page); font-family: var(--font-sans); display: flex; flex-direction: column; gap: 16px; }
+  .bar { height: 40px; border-radius: var(--radius-pill); background: var(--atr-via-gradient); }
+  .tri { height: 16px; border-radius: var(--radius-pill); background: var(--atr-via-gradient-tri); }
+  .lbl { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted); }
+</style>
+</head>
+<body>
+  <div>
+    <div class="bar"></div>
+    <div class="lbl" style="margin-top:6px">--atr-via-gradient · navy → blue → aqua</div>
+  </div>
+  <div>
+    <div class="tri"></div>
+    <div class="lbl" style="margin-top:6px">--atr-via-gradient-tri · aqua → blue → navy</div>
+  </div>
+</body>
+</html>

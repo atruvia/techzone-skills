@@ -1,0 +1,28 @@
+<!-- @dsCard group="Spacing" viewport="700x150" name="Spacing ramp" subtitle="8px base grid, 4 → 128px" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 22px; background: var(--surface-page); font-family: var(--font-sans); }
+  .row { display: flex; align-items: flex-end; gap: 14px; }
+  .cell { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .box { background: var(--atr-blue-200); border-radius: var(--radius-xs); width: 24px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="cell"><div class="box" style="height:var(--space-1)"></div><div class="lbl">1·4</div></div>
+    <div class="cell"><div class="box" style="height:var(--space-2)"></div><div class="lbl">2·8</div></div>
+    <div class="cell"><div class="box" style="height:var(--space-3)"></div><div class="lbl">3·12</div></div>
+    <div class="cell"><div class="box" style="height:var(--space-4)"></div><div class="lbl">4·16</div></div>
+    <div class="cell"><div class="box" style="height:var(--space-5)"></div><div class="lbl">5·24</div></div>
+    <div class="cell"><div class="box" style="height:var(--space-6)"></div><div class="lbl">6·32</div></div>
+    <div class="cell"><div class="box" style="height:var(--space-7)"></div><div class="lbl">7·40</div></div>
+    <div class="cell"><div class="box" style="height:var(--space-8)"></div><div class="lbl">8·48</div></div>
+    <div class="cell"><div class="box" style="height:var(--space-9)"></div><div class="lbl">9·64</div></div>
+  </div>
+</body>
+</html>

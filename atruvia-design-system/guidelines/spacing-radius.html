@@ -1,0 +1,26 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Radius — curves & cuts" subtitle="Mostly soft rounding; sharp accents express the angular side" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 22px; background: var(--surface-page); font-family: var(--font-sans); }
+  .row { display: flex; gap: 16px; align-items: flex-end; }
+  .cell { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .box { width: 72px; height: 72px; background: var(--atr-blue-500); }
+  .sharp { background: var(--atr-coral-500); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="cell"><div class="box sharp" style="border-radius:var(--radius-none)"></div><div class="lbl">none · cut</div></div>
+    <div class="cell"><div class="box" style="border-radius:var(--radius-sm)"></div><div class="lbl">sm · 8</div></div>
+    <div class="cell"><div class="box" style="border-radius:var(--radius-md)"></div><div class="lbl">md · 12</div></div>
+    <div class="cell"><div class="box" style="border-radius:var(--radius-lg)"></div><div class="lbl">lg · 18</div></div>
+    <div class="cell"><div class="box" style="border-radius:var(--radius-xl)"></div><div class="lbl">xl · 28</div></div>
+    <div class="cell"><div class="box" style="border-radius:var(--radius-pill)"></div><div class="lbl">pill</div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- @dsCard group="Brand" viewport="700x210" name="Logos & lockups" subtitle="Official ATRUVIA wordmark + FinanzGruppe lockup" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 0; background: var(--surface-page); font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; }
+  .pane { padding: 30px 28px; display: flex; flex-direction: column; gap: 16px; justify-content: center; min-height: 150px; }
+  .light { background: var(--surface-page); }
+  .dark { background: var(--atr-ink-900); }
+  .light img { height: 34px; }
+  .dark img { height: 30px; }
+  .sub { font-size: var(--text-xs); color: var(--text-muted); }
+  .dark .sub { color: var(--atr-gray-400); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="pane light">
+      <img src="../assets/logos/atruvia-wordmark.svg" alt="ATRUVIA" />
+      <div class="sub">Wordmark · Navy #000064 on light</div>
+    </div>
+    <div class="pane dark">
+      <img src="../assets/logos/finanzgruppe-inverted.svg" alt="Genossenschaftliche FinanzGruppe Volksbanken Raiffeisenbanken" />
+      <div class="sub">FinanzGruppe lockup · reversed on Ink</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!-- @dsCard group="Components" viewport="700x260" name="Buttons & actions" subtitle="Button variants + sizes, IconButton, Logo" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin: 0; padding: 26px; background: var(--surface-page); font-family: var(--font-sans); }
+  .stack { display: flex; flex-direction: column; gap: 20px; }
+  .row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .lbl { font-size: var(--text-xs); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); width: 100%; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  const { Button, IconButton, Logo } = window.AtruviaDesignSystem_79ca21;
+  const Ico = (p) => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">{p.children}</svg>;
+  const Arrow = () => <Ico><path d="M5 12h14M13 6l6 6-6 6" /></Ico>;
+  const Plus = () => <Ico><path d="M12 5v14M5 12h14" /></Ico>;
+  function Demo() {
+    return (
+      <div className="stack">
+        <div className="row">
+          <span className="lbl">Variants</span>
+          <Button variant="primary">Jetzt starten</Button>
+          <Button variant="secondary">Mehr erfahren</Button>
+          <Button variant="ghost">Abbrechen</Button>
+          <Button variant="gradient" iconRight={<Arrow />}>Verbinden</Button>
+        </div>
+        <div className="row">
+          <span className="lbl">Sizes & state</span>
+          <Button size="sm">Small</Button>
+          <Button size="md">Medium</Button>
+          <Button size="lg">Large</Button>
+          <Button disabled>Disabled</Button>
+        </div>
+        <div className="row">
+          <span className="lbl">Icon button · Logo</span>
+          <IconButton label="Add" variant="solid"><Plus /></IconButton>
+          <IconButton label="Add" variant="bordered"><Plus /></IconButton>
+          <IconButton label="Add"><Plus /></IconButton>
+          <span style={{flex:1}} />
+          <Logo withMark height={24} />
+        </div>
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(<Demo />);
+</script>
+</body>
+</html>

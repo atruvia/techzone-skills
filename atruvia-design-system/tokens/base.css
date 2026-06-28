@@ -1,0 +1,81 @@
+/* ============================================================
+   ATRUVIA — BASE LAYER
+   Light element defaults + a few brand helpers. Consumers get
+   this through styles.css. Keep it lean; components own their
+   own styling via tokens.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--text-body);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5em;
+  font-family: var(--role-heading-font);
+  font-weight: var(--role-heading-weight);
+  letter-spacing: var(--role-heading-tracking);
+  line-height: var(--role-heading-leading);
+  color: var(--text-strong);
+  text-wrap: balance;
+}
+h1 { font-size: var(--text-4xl); font-weight: var(--weight-extrabold); letter-spacing: var(--tracking-tight); line-height: var(--leading-tight); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+
+p { margin: 0 0 1em; text-wrap: pretty; }
+
+a { color: var(--text-link); text-decoration: none; transition: color var(--duration-fast) var(--ease-standard); }
+a:hover { color: var(--text-link-hover); }
+
+code, kbd, samp { font-family: var(--font-mono); font-size: 0.9em; }
+
+::selection { background: var(--atr-blue-200); color: var(--atr-ink-900); }
+
+:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-xs); }
+
+/* ---- Brand helpers --------------------------------------- */
+
+/* Eyebrow / overline label */
+.atr-eyebrow {
+  font-family: var(--role-eyebrow-font);
+  font-weight: var(--role-eyebrow-weight);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+  color: var(--text-link);
+}
+
+/* The VIA Line — signature connecting element */
+.atr-via-line {
+  display: block;
+  height: 4px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--atr-via-gradient);
+}
+
+.atr-via-text {
+  background: var(--atr-via-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.atr-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}

@@ -1,0 +1,32 @@
+<!-- @dsCard group="Brand" viewport="700x380" name="Iconography" subtitle="The official Atruvia icon set — 60 symbols, tinted via currentColor" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 20px; background: var(--surface-page); font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px 4px; }
+  .cell { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 8px 2px; border-radius: var(--radius-sm); color: var(--atr-ink-900); }
+  .cell:hover { background: var(--atr-blue-050); color: var(--atr-blue-600); }
+  .cell svg { width: 26px; height: 26px; fill: currentColor; }
+  .lbl { font-family: var(--font-mono); font-size: 8px; color: var(--text-muted); text-align: center; line-height: 1.1; word-break: break-word; }
+</style>
+</head>
+<body>
+  <div class="grid" id="grid"></div>
+  <script>
+    const ICONS = ["arrow-circle","arrow-down","arrow-left","arrow-right","arrow-up","atruvia","bolt-circle","calendar","caret-down","caret-left","caret-right","caret-up","category","check","cookies","copyright","cross","database","download","dropdown-arrow","ecosystem","edit","entry-point","error","external-link","facebook","filter","hand-leaf","idea","info","instagram","linkedin","loader","location","mail","mail-filled","menu","off","organisation-structure","panorama","pause","phone","pin","play","play-inverted","plus","pointed-double-arrow-circle","quote","return","robot","routes","shaking-hands","smartphone","success","thumbs-up","time","twitter","warning","xing","youtube"];
+    const g = document.getElementById("grid");
+    g.innerHTML = ICONS.map(n =>
+      `<div class="cell" title="${n}"><svg aria-hidden="true"><use href="#icon-${n}"></use></svg><span class="lbl">${n}</span></div>`
+    ).join("");
+    // inject the sprite once so same-document <use> references resolve everywhere
+    fetch("../assets/icons/atruvia-icons.svg").then(r => r.text()).then(txt => {
+      const d = document.createElement("div");
+      d.style.display = "none"; d.innerHTML = txt;
+      document.body.insertBefore(d, document.body.firstChild);
+    });
+  </script>
+</body>
+</html>

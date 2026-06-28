@@ -1,0 +1,85 @@
+<!-- @dsCard group="Atruvia Website" viewport="1280x880" name="Corporate site — Home" subtitle="Interactive recreation of atruvia.de (hero, services, news)" -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Atruvia — Wir verbinden. Füreinander.</title>
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin: 0; background: var(--surface-page); }
+  .atr-mobile-only { display: none; }
+  @media (max-width: 880px) {
+    .atr-desktop-nav { display: none !important; }
+    .atr-mobile-only { display: inline-flex; }
+    .atr-hero-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+    .atr-stats-grid { grid-template-columns: repeat(2,1fr) !important; gap: 28px !important; }
+    .atr-services-grid { grid-template-columns: 1fr !important; }
+    .atr-footer-grid { grid-template-columns: 1fr 1fr !important; }
+    h1 { font-size: var(--text-5xl) !important; }
+  }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel" src="./sections.jsx"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  const DS = window.AtruviaDesignSystem_79ca21;
+  const { Button, Input, Dialog } = DS;
+
+  // Inject the icon sprite once so same-document <use> references resolve.
+  fetch("../../assets/icons/atruvia-icons.svg").then(r => r.text()).then(t => {
+    const d = document.createElement("div");
+    d.style.display = "none"; d.innerHTML = t;
+    document.body.insertBefore(d, document.body.firstChild);
+  });
+
+  function App() {
+    const [page, setPage] = React.useState("home");
+    const [contact, setContact] = React.useState(false);
+    const props = { page, setPage, onContact: () => setContact(true) };
+    return (
+      <React.Fragment>
+        <window.SiteHeader {...props} />
+        {page === "home" ? (
+          <React.Fragment>
+            <window.Hero onContact={() => setContact(true)} />
+            <window.StatsBand />
+            <window.ServicesSection lead="Vom Rechenzentrumsbetrieb über das Bankverfahren bis zur App-Entwicklung — wir sind die Möglichmacher*innen der digitalen Bank." />
+            <window.ConnectionBand />
+            <window.MagazineSection />
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <section style={{ background: "var(--surface-sunken)", padding: "var(--space-10) 0 var(--space-9)" }}>
+              <div className="atr-container">
+                <div className="atr-eyebrow">Leistungen</div>
+                <h1 style={{ fontSize: "var(--text-5xl)", margin: "14px 0 0", maxWidth: "18ch" }}>
+                  Alles für die <span className="atr-via-text">digitale Bank</span>.
+                </h1>
+              </div>
+            </section>
+            <window.ServicesSection heading="Was wir möglich machen" lead="Eine durchgängige Plattform — von der Infrastruktur bis zur Kund*innen-App." />
+          </React.Fragment>
+        )}
+        <window.SiteFooter />
+
+        <Dialog open={contact} onClose={() => setContact(false)} title="Kontakt aufnehmen"
+          actions={<><Button variant="ghost" onClick={() => setContact(false)}>Abbrechen</Button>
+            <Button variant="primary" onClick={() => setContact(false)}>Senden</Button></>}>
+          <div style={{ display: "grid", gap: 16 }}>
+            <Input label="Name" placeholder="Max Mustermann" />
+            <Input label="E-Mail" placeholder="max@volksbank.de" />
+          </div>
+        </Dialog>
+      </React.Fragment>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

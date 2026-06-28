@@ -1,0 +1,28 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Neutral ramp" subtitle="Cool-warm grey scale for text, surfaces and borders" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 22px; background: var(--surface-page); font-family: var(--font-sans); }
+  .ramp { display: grid; grid-template-columns: repeat(9, 1fr); gap: 6px; }
+  .cell { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+  .chip { width: 100%; height: 56px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+  <div class="ramp">
+    <div class="cell"><div class="chip" style="background:var(--atr-gray-050)"></div><div class="lbl">050</div></div>
+    <div class="cell"><div class="chip" style="background:var(--atr-gray-100)"></div><div class="lbl">100</div></div>
+    <div class="cell"><div class="chip" style="background:var(--atr-gray-200)"></div><div class="lbl">200</div></div>
+    <div class="cell"><div class="chip" style="background:var(--atr-gray-300)"></div><div class="lbl">300</div></div>
+    <div class="cell"><div class="chip" style="background:var(--atr-gray-400)"></div><div class="lbl">400</div></div>
+    <div class="cell"><div class="chip" style="background:var(--atr-gray-500)"></div><div class="lbl">500</div></div>
+    <div class="cell"><div class="chip" style="background:var(--atr-gray-600)"></div><div class="lbl">600</div></div>
+    <div class="cell"><div class="chip" style="background:var(--atr-gray-700)"></div><div class="lbl">700</div></div>
+    <div class="cell"><div class="chip" style="background:var(--atr-gray-900)"></div><div class="lbl">900</div></div>
+  </div>
+</body>
+</html>

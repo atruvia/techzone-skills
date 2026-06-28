@@ -1,0 +1,27 @@
+/* ============================================================
+   ATRUVIA — RADIUS TOKENS
+   ------------------------------------------------------------
+   The brand pairs SOFT curves with ANGULAR cuts ("people +
+   technology"). Most surfaces are generously rounded; a few
+   accent elements stay sharp (radius-none) to express the
+   angular side. Buttons/inputs use the pill/large end.
+   ============================================================ */
+
+:root {
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-2xl: 40px;
+  --radius-pill: 999px;
+
+  /* Semantic */
+  --radius-button: var(--radius-pill);
+  --radius-input: var(--radius-md);
+  --radius-card: var(--radius-lg);
+  --radius-card-lg: var(--radius-xl);
+  --radius-badge: var(--radius-pill);
+  --radius-control: var(--radius-sm);
+}

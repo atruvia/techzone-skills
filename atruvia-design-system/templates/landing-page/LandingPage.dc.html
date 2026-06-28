@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Atruvia Landing Page" description="Brand landing page — hero, proof stats, services and Ink footer, on Atruvia tokens" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<script>fetch("../../assets/icons/atruvia-icons.svg").then(function(r){return r.text();}).then(function(t){var d=document.createElement("div");d.style.display="none";d.innerHTML=t;document.body.insertBefore(d,document.body.firstChild);});</script>
+</helmet>
+
+<div style="font-family:var(--font-sans); color:var(--text-body); background:var(--surface-page);">
+
+  <!-- Header -->
+  <header style="position:sticky; top:0; z-index:30; background:rgba(255,255,255,.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--border-subtle);">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; height:74px; display:flex; align-items:center; gap:24px;">
+      <img src="../../assets/logos/atruvia-wordmark.svg" alt="Atruvia" style="height:26px; width:auto; display:block;">
+      <nav style="display:flex; gap:6px; margin-left:16px; flex:1;">
+        <a href="#" style="padding:8px 14px; font-weight:600; font-size:15px; color:var(--text-strong); text-decoration:none;">Startseite</a>
+        <a href="#" style="padding:8px 14px; font-weight:600; font-size:15px; color:var(--text-body); text-decoration:none;">Leistungen</a>
+        <a href="#" style="padding:8px 14px; font-weight:600; font-size:15px; color:var(--text-body); text-decoration:none;">Unternehmen</a>
+      </nav>
+      <x-import component-from-global-scope="AtruviaDesignSystem_79ca21.Button" variant="primary" size="sm" hint-size="120px,38px">Karriere</x-import>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section style="max-width:1240px; margin:0 auto; padding:96px 24px; display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;">
+    <div>
+      <div style="font-weight:600; letter-spacing:.12em; text-transform:uppercase; font-size:12px; color:var(--text-link);">Digitalisierungspartner</div>
+      <h1 style="font-family:var(--font-display); font-weight:800; letter-spacing:-.02em; line-height:1.04; font-size:72px; color:var(--text-strong); margin:16px 0 0;">Wir verbinden.<br><span style="background:var(--atr-via-gradient); -webkit-background-clip:text; background-clip:text; color:transparent;">Füreinander.</span></h1>
+      <p style="font-size:18px; color:var(--text-body); max-width:46ch; margin-top:22px; line-height:1.65;">Mit innovativen IT-Lösungen machen wir die Volksbanken und Raiffeisenbanken fit für die digitale Zukunft. einfach. sicher. digital.</p>
+      <div style="display:flex; gap:12px; margin-top:30px; flex-wrap:wrap;">
+        <x-import component-from-global-scope="AtruviaDesignSystem_79ca21.Button" variant="gradient" size="lg" hint-size="220px,56px">Leistungen entdecken</x-import>
+        <x-import component-from-global-scope="AtruviaDesignSystem_79ca21.Button" variant="secondary" size="lg" hint-size="200px,56px">Kontakt aufnehmen</x-import>
+      </div>
+    </div>
+    <div style="position:relative;">
+      <img src="../../assets/photos/hero-hub.jpg" alt="Kolleg*innen am Hub" style="height:380px; width:100%; object-fit:cover; border-radius:40px; display:block;">
+      <div style="position:absolute; left:-22px; bottom:34px; background:var(--surface-card); box-shadow:var(--shadow-lg); border-radius:18px; padding:16px 20px; display:flex; gap:14px; align-items:center;">
+        <span style="width:44px; height:44px; border-radius:999px; background:var(--atr-via-gradient);"></span>
+        <span>
+          <span style="display:block; font-family:var(--font-display); font-weight:800; font-size:22px; color:var(--text-strong);">91 Mio.</span>
+          <span style="display:block; font-size:13px; color:var(--text-muted);">Konten verwaltet</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats band -->
+  <section style="background:var(--atr-ink-900); padding:64px 0;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:repeat(4,1fr); gap:32px;">
+      <div><div style="font-family:var(--font-display); font-weight:800; font-size:48px; color:#fff; letter-spacing:-.02em;">8.400</div><div style="width:40px; height:4px; border-radius:999px; background:var(--atr-via-gradient); margin:12px 0;"></div><div style="color:var(--atr-gray-400); font-size:15px;">Mitarbeiter*innen</div></div>
+      <div><div style="font-family:var(--font-display); font-weight:800; font-size:48px; color:#fff; letter-spacing:-.02em;">~820</div><div style="width:40px; height:4px; border-radius:999px; background:var(--atr-via-gradient); margin:12px 0;"></div><div style="color:var(--atr-gray-400); font-size:15px;">Volks- & Raiffeisenbanken</div></div>
+      <div><div style="font-family:var(--font-display); font-weight:800; font-size:48px; color:#fff; letter-spacing:-.02em;">153.000</div><div style="width:40px; height:4px; border-radius:999px; background:var(--atr-via-gradient); margin:12px 0;"></div><div style="color:var(--atr-gray-400); font-size:15px;">Bankarbeitsplätze</div></div>
+      <div><div style="font-family:var(--font-display); font-weight:800; font-size:48px; color:#fff; letter-spacing:-.02em;">1,77 Mrd.</div><div style="width:40px; height:4px; border-radius:999px; background:var(--atr-via-gradient); margin:12px 0;"></div><div style="color:var(--atr-gray-400); font-size:15px;">Euro Konzernumsatz</div></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section style="max-width:1240px; margin:0 auto; padding:96px 24px;">
+    <div style="max-width:52ch; margin-bottom:44px;">
+      <div style="font-weight:600; letter-spacing:.12em; text-transform:uppercase; font-size:12px; color:var(--text-link);">Möglichmacher*innen</div>
+      <h2 style="font-family:var(--font-display); font-weight:700; letter-spacing:-.01em; font-size:48px; color:var(--text-strong); margin:14px 0 0;">Unsere Leistungen</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
+      <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:18px; padding:32px;">
+        <span style="display:inline-flex; width:52px; height:52px; border-radius:12px; background:var(--atr-aqua-100); color:var(--atr-blue-500); align-items:center; justify-content:center;"><svg width="26" height="26" fill="currentColor" aria-hidden="true"><use href="#icon-ecosystem"></use></svg></span>
+        <h3 style="font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--text-strong); margin:18px 0 8px;">Cloud-Plattform</h3>
+        <p style="color:var(--text-body); font-size:15px; margin:0; line-height:1.6;">Vom Kernbanksystem zur offenen, cloud-basierten Architektur.</p>
+      </div>
+      <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:18px; padding:32px;">
+        <span style="display:inline-flex; width:52px; height:52px; border-radius:12px; background:var(--atr-aqua-100); color:var(--atr-blue-500); align-items:center; justify-content:center;"><svg width="26" height="26" fill="currentColor" aria-hidden="true"><use href="#icon-smartphone"></use></svg></span>
+        <h3 style="font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--text-strong); margin:18px 0 8px;">App-Entwicklung</h3>
+        <p style="color:var(--text-body); font-size:15px; margin:0; line-height:1.6;">Die VR-BankingApp und digitale Self-Services für Millionen Kund*innen.</p>
+      </div>
+      <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:18px; padding:32px;">
+        <span style="display:inline-flex; width:52px; height:52px; border-radius:12px; background:var(--atr-aqua-100); color:var(--atr-blue-500); align-items:center; justify-content:center;"><svg width="26" height="26" fill="currentColor" aria-hidden="true"><use href="#icon-shaking-hands"></use></svg></span>
+        <h3 style="font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--text-strong); margin:18px 0 8px;">IT-Sicherheit</h3>
+        <p style="color:var(--text-body); font-size:15px; margin:0; line-height:1.6;">Banking muss einfach und sicher sein — Sicherheit im Kern jeder Lösung.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:var(--atr-ink-900); color:var(--atr-gray-400); padding:48px 0;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 24px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center;">
+      <img src="../../assets/logos/atruvia-wordmark.svg" alt="Atruvia" style="height:22px; width:auto; display:block; filter:brightness(0) invert(1);">
+      <span style="font-size:13px;">© 2026 Atruvia AG · Karlsruhe & Münster</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* ============================================================
+   ATRUVIA — COMPONENT STYLES
+   Class-based styling for the React primitives. Components apply
+   these classes; all visual values come from tokens. Hover /
+   focus / active / disabled live here so states work without JS.
+   ============================================================ */
+
+/* ---------- Button ---------------------------------------- */
+.atr-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans); font-weight: var(--weight-semibold);
+  font-size: var(--text-md); line-height: 1;
+  border-radius: var(--radius-button);
+  border: 1px solid transparent;
+  padding: 0 var(--space-5); height: 48px;
+  cursor: pointer; white-space: nowrap; text-decoration: none;
+  transition: var(--transition-control);
+  -webkit-tap-highlight-color: transparent;
+}
+.atr-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.atr-btn:active { transform: scale(0.985); }
+.atr-btn[disabled], .atr-btn[aria-disabled="true"] {
+  cursor: not-allowed; opacity: 0.5; transform: none; box-shadow: none;
+}
+.atr-btn--sm { height: 38px; font-size: var(--text-sm); padding: 0 var(--space-4); }
+.atr-btn--lg { height: 56px; font-size: var(--text-lg); padding: 0 var(--space-6); }
+.atr-btn--block { display: flex; width: 100%; }
+
+.atr-btn--primary { background: var(--action-primary-bg); color: var(--action-primary-fg); }
+.atr-btn--primary:hover { background: var(--action-primary-bg-hover); }
+.atr-btn--primary:active { background: var(--action-primary-bg-active); }
+
+.atr-btn--secondary { background: var(--action-secondary-bg); color: var(--action-secondary-fg); }
+.atr-btn--secondary:hover { background: var(--action-secondary-bg-hover); }
+
+.atr-btn--ghost { background: transparent; color: var(--text-link); }
+.atr-btn--ghost:hover { background: var(--atr-blue-050); }
+
+.atr-btn--gradient { background: var(--atr-via-gradient); color: var(--atr-white); box-shadow: var(--shadow-brand); }
+.atr-btn--gradient:hover { filter: brightness(1.05); }
+
+/* ---------- Icon button ----------------------------------- */
+.atr-iconbtn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: var(--radius-pill);
+  border: 1px solid transparent; background: transparent; color: var(--text-body);
+  cursor: pointer; transition: var(--transition-control);
+}
+.atr-iconbtn:hover { background: var(--atr-gray-100); color: var(--text-strong); }
+.atr-iconbtn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.atr-iconbtn:active { transform: scale(0.94); }
+.atr-iconbtn--solid { background: var(--action-primary-bg); color: var(--action-primary-fg); }
+.atr-iconbtn--solid:hover { background: var(--action-primary-bg-hover); }
+.atr-iconbtn--bordered { border-color: var(--action-neutral-border); }
+
+/* ---------- Field (Input / Textarea / Select) ------------- */
+.atr-field { display: flex; flex-direction: column; gap: var(--space-2); }
+.atr-label { font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--text-strong); }
+.atr-hint { font-size: var(--text-xs); color: var(--text-muted); }
+.atr-hint--error { color: var(--atr-error-600); }
+.atr-input, .atr-textarea, .atr-select {
+  font-family: var(--font-sans); font-size: var(--text-md); color: var(--text-strong);
+  background: var(--surface-card); border: 1px solid var(--border-default);
+  border-radius: var(--radius-input); padding: 0 var(--space-4); height: 48px;
+  width: 100%; transition: var(--transition-control); outline: none;
+}
+.atr-textarea { height: auto; padding: var(--space-3) var(--space-4); line-height: var(--leading-normal); resize: vertical; min-height: 96px; }
+.atr-input::placeholder, .atr-textarea::placeholder { color: var(--text-subtle); }
+.atr-input:hover, .atr-textarea:hover, .atr-select:hover { border-color: var(--border-strong); }
+.atr-input:focus, .atr-textarea:focus, .atr-select:focus { border-color: var(--border-focus); box-shadow: var(--focus-ring); }
+.atr-input[aria-invalid="true"], .atr-textarea[aria-invalid="true"] { border-color: var(--atr-error-500); }
+.atr-input:disabled, .atr-textarea:disabled, .atr-select:disabled { background: var(--atr-gray-050); color: var(--text-subtle); cursor: not-allowed; }
+.atr-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%236B7389' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right var(--space-4) center; padding-right: var(--space-8); }
+
+/* ---------- Checkbox / Radio ------------------------------ */
+.atr-choice { display: inline-flex; align-items: center; gap: var(--space-3); cursor: pointer; font-size: var(--text-md); color: var(--text-body); }
+.atr-choice input { position: absolute; opacity: 0; width: 0; height: 0; }
+.atr-choice__box { width: 22px; height: 22px; border: 2px solid var(--border-strong); border-radius: var(--radius-xs); display: inline-flex; align-items: center; justify-content: center; transition: var(--transition-control); flex: none; color: #fff; }
+.atr-choice__box--radio { border-radius: var(--radius-pill); }
+.atr-choice input:checked + .atr-choice__box { background: var(--action-primary-bg); border-color: var(--action-primary-bg); }
+.atr-choice input:focus-visible + .atr-choice__box { box-shadow: var(--focus-ring); }
+.atr-choice__box svg { opacity: 0; transition: opacity var(--duration-fast); }
+.atr-choice input:checked + .atr-choice__box svg { opacity: 1; }
+.atr-choice__dot { width: 8px; height: 8px; border-radius: var(--radius-pill); background: #fff; opacity: 0; transition: opacity var(--duration-fast); }
+.atr-choice input:checked + .atr-choice__box .atr-choice__dot { opacity: 1; }
+
+/* ---------- Switch ---------------------------------------- */
+.atr-switch { display: inline-flex; align-items: center; gap: var(--space-3); cursor: pointer; }
+.atr-switch input { position: absolute; opacity: 0; width: 0; height: 0; }
+.atr-switch__track { width: 46px; height: 26px; border-radius: var(--radius-pill); background: var(--atr-gray-300); position: relative; transition: var(--transition-control); flex: none; }
+.atr-switch__thumb { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: var(--radius-pill); background: #fff; box-shadow: var(--shadow-sm); transition: var(--transition-control); }
+.atr-switch input:checked + .atr-switch__track { background: var(--action-primary-bg); }
+.atr-switch input:checked + .atr-switch__track .atr-switch__thumb { left: 23px; }
+.atr-switch input:focus-visible + .atr-switch__track { box-shadow: var(--focus-ring); }
+
+/* ---------- Card ------------------------------------------ */
+.atr-card { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-card); padding: var(--space-6); transition: var(--transition-control); }
+.atr-card--raised { border-color: transparent; box-shadow: var(--shadow-md); }
+.atr-card--interactive { cursor: pointer; }
+.atr-card--interactive:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: transparent; }
+.atr-card__media { margin: calc(-1 * var(--space-6)) calc(-1 * var(--space-6)) var(--space-5); border-radius: var(--radius-card) var(--radius-card) 0 0; overflow: hidden; }
+
+/* ---------- Badge & Tag ----------------------------------- */
+.atr-badge { display: inline-flex; align-items: center; gap: var(--space-1); font-size: var(--text-xs); font-weight: var(--weight-semibold); padding: 3px 10px; border-radius: var(--radius-badge); line-height: 1.4; }
+.atr-badge--brand { background: var(--atr-blue-050); color: var(--atr-blue-700); }
+.atr-badge--neutral { background: var(--atr-gray-100); color: var(--atr-gray-700); }
+.atr-badge--success { background: var(--atr-success-050); color: var(--atr-success-600); }
+.atr-badge--warning { background: var(--atr-warning-050); color: var(--atr-warning-600); }
+.atr-badge--error { background: var(--atr-error-050); color: var(--atr-error-600); }
+.atr-badge--solid { background: var(--action-primary-bg); color: #fff; }
+.atr-tag { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--text-body); background: var(--surface-card); border: 1px solid var(--border-default); padding: 5px 12px; border-radius: var(--radius-pill); }
+.atr-tag__remove { display: inline-flex; cursor: pointer; color: var(--text-subtle); border: 0; background: none; padding: 0; }
+.atr-tag__remove:hover { color: var(--text-strong); }
+
+/* ---------- Alert ----------------------------------------- */
+.atr-alert { display: flex; gap: var(--space-3); padding: var(--space-4) var(--space-5); border-radius: var(--radius-md); border: 1px solid var(--border-subtle); background: var(--surface-card); }
+.atr-alert__icon { flex: none; margin-top: 1px; }
+.atr-alert__title { font-weight: var(--weight-semibold); color: var(--text-strong); margin: 0 0 2px; }
+.atr-alert__body { font-size: var(--text-sm); color: var(--text-body); margin: 0; }
+.atr-alert--info { background: var(--atr-blue-050); border-color: var(--atr-blue-200); }
+.atr-alert--info .atr-alert__icon { color: var(--atr-blue-600); }
+.atr-alert--success { background: var(--atr-success-050); border-color: #BDE7D2; }
+.atr-alert--success .atr-alert__icon { color: var(--atr-success-600); }
+.atr-alert--warning { background: var(--atr-warning-050); border-color: #F4DEA6; }
+.atr-alert--warning .atr-alert__icon { color: var(--atr-warning-600); }
+.atr-alert--error { background: var(--atr-error-050); border-color: #F3C2C2; }
+.atr-alert--error .atr-alert__icon { color: var(--atr-error-600); }
+
+/* ---------- Avatar ---------------------------------------- */
+.atr-avatar { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-pill); background: var(--atr-blue-050); color: var(--atr-blue-700); font-weight: var(--weight-semibold); overflow: hidden; flex: none; }
+.atr-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.atr-avatar--sm { width: 32px; height: 32px; font-size: var(--text-xs); }
+.atr-avatar--md { width: 44px; height: 44px; font-size: var(--text-sm); }
+.atr-avatar--lg { width: 64px; height: 64px; font-size: var(--text-lg); }
+
+/* ---------- Tabs ------------------------------------------ */
+.atr-tabs { display: flex; gap: var(--space-1); border-bottom: 1px solid var(--border-subtle); }
+.atr-tab { appearance: none; background: none; border: 0; font-family: var(--font-sans); font-size: var(--text-md); font-weight: var(--weight-semibold); color: var(--text-muted); padding: var(--space-3) var(--space-4); cursor: pointer; position: relative; transition: color var(--duration-base) var(--ease-standard); }
+.atr-tab:hover { color: var(--text-strong); }
+.atr-tab--active { color: var(--text-strong); }
+.atr-tab--active::after { content: ""; position: absolute; left: var(--space-4); right: var(--space-4); bottom: -1px; height: 3px; border-radius: var(--radius-pill); background: var(--atr-via-gradient); }
+.atr-tab:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-xs); }
+
+/* ---------- Dialog ---------------------------------------- */
+.atr-dialog__overlay { position: fixed; inset: 0; background: rgba(16, 22, 43, 0.45); backdrop-filter: blur(2px); display: flex; align-items: center; justify-content: center; padding: var(--space-5); z-index: 100; }
+.atr-dialog { background: var(--surface-card); border-radius: var(--radius-card-lg); box-shadow: var(--shadow-xl); width: 100%; max-width: 480px; padding: var(--space-7); position: relative; }
+.atr-dialog__close { position: absolute; top: var(--space-4); right: var(--space-4); }
+.atr-dialog__title { font-family: var(--font-display); font-weight: var(--weight-bold); font-size: var(--text-2xl); color: var(--text-strong); margin: 0 0 var(--space-2); }
+.atr-dialog__body { color: var(--text-body); margin: 0 0 var(--space-6); }
+.atr-dialog__actions { display: flex; gap: var(--space-3); justify-content: flex-end; }
