@@ -17,17 +17,18 @@ Every destination path is project-root absolute (starts with `/`).
 
 ---
 
-## 🔴 1. Typeface — "VIA Type" (custom, licensed)
-Not on the public web — from the **Atruvia brand portal / CD package**. WOFF2
-preferred (TTF/OTF fine — keep the same base filename, just change extension).
-- [ ] `/assets/fonts/VIAType-Light.woff2`      — Light (300)
-- [ ] `/assets/fonts/VIAType-Regular.woff2`    — Regular (400)
-- [ ] `/assets/fonts/VIAType-Medium.woff2`     — Medium (500)
-- [ ] `/assets/fonts/VIAType-SemiBold.woff2`   — SemiBold (600)
-- [ ] `/assets/fonts/VIAType-Bold.woff2`       — Bold (700)
-- [ ] `/assets/fonts/VIAType-Display.woff2`    — Display/Black headline cut (if separate)
-- [ ] `/assets/fonts/VIAType-Mono.woff2`       — mono/secondary face (if the brand specifies one)
-> Until then the system substitutes **Hanken Grotesk** + **IBM Plex Mono**.
+## ✅ 1. Typeface — "ATRUVIA" (custom, licensed)
+The real Atruvia corporate typeface, self-hosted in `assets/fonts/`. The brand
+ships **four real weights** (confirmed against the live atruvia.de stylesheet,
+`assets/brand/atruvia-site.css`). `fonts/fonts.css` declares the `ATRUVIA` family.
+- [x] `/assets/fonts/VIAType-Light.woff2`      — Light (300)
+- [x] `/assets/fonts/VIAType-Regular.woff2`    — Regular (400)
+- [x] `/assets/fonts/VIAType-Medium.woff2`     — Medium (500)
+- [x] `/assets/fonts/VIAType-Bold.woff2`       — Bold (700)
+- there is **no separate SemiBold / Display / Mono cut** in the brand — weight
+  600 and 800 reuse the real Bold, and `--font-mono` is a system mono stack.
+> Earlier this folder held placeholder `VIAType-*.woff2` files that were actually
+> HTML pages (not fonts); they have been replaced with the real WOFF2 weights.
 
 ## 🔴 2. Exact colours / Corporate Design manual
 To confirm the interactive + gradient hues (I have only the 3 anchor colours).

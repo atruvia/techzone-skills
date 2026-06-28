@@ -1,9 +1,10 @@
 # Atruvia Design System
 
-Ein selbst-hostbares Design-System, das die Marke der **Atruvia AG** abbildet –
-des Digitalisierungspartners der **Genossenschaftlichen FinanzGruppe Volksbanken
-Raiffeisenbanken**. Es bündelt Typografie, Farbsystem, Spacing, Motion,
-wiederverwendbare React-UI-Komponenten sowie vollflächige Produkt-Nachbauten,
+Selbst hostbares **Marken-Designsystem der Atruvia AG** – des
+Digitalisierungspartners der **Genossenschaftlichen FinanzGruppe Volksbanken
+Raiffeisenbanken**: Design-Tokens, React-UI-Komponenten, Marken-Assets und
+Richtlinien für die Entwicklung markengerechter Oberflächen. Es bündelt
+Typografie, Farbsystem, Spacing, Motion und vollflächige Produkt-Nachbauten,
 damit Design-Agents marken­konforme Interfaces und Assets erzeugen können.
 
 > **Status: vollständig auf offiziellen Markenassets.** Schriften, Logos,
