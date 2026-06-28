@@ -56,23 +56,17 @@
 
       <!-- Die VIA-Linie: das Marken-Element. Verlauf navy→blau→aqua
            (= --atr-via-gradient). Verbindet zwei Begriffe — »Mensch«
-           und »Technologie«. Sie ist eine Grafik, nie ein Rahmen. -->
-      <svg class="via-line" viewBox="0 0 600 100" preserveAspectRatio="xMidYMid meet"
+           und »Technologie«. Eine Grafik, nie ein Rahmen. Kanonische
+           Form: brand/via-line.svg — eine Form, nur die Labels tauschen. -->
+      <svg class="atr-via-line atr-via-line--draw" viewBox="0 0 600 100" preserveAspectRatio="xMidYMid meet"
            role="img" aria-label="VIA-Linie verbindet Mensch und Technologie">
         <defs>
-          <linearGradient id="via-grad" gradientUnits="userSpaceOnUse" x1="120" y1="50" x2="460" y2="50">
-            <stop offset="0" stop-color="#000064"/>
-            <stop offset="0.55" stop-color="#0a5ae1"/>
-            <stop offset="1" stop-color="#d4f2f5"/>
+          <linearGradient id="via-grad" gradientUnits="userSpaceOnUse" x1="120" y1="50" x2="480" y2="50">
+            <stop offset="0" stop-color="#000064"/><stop offset="0.55" stop-color="#0a5ae1"/><stop offset="1" stop-color="#d4f2f5"/>
           </linearGradient>
         </defs>
-        <g fill="none" stroke="url(#via-grad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M 120 50 L 140 50 L 140 22 L 220 22 L 250 50 L 320 50 Q 360 50 360 70 Q 360 90 380 90 Q 400 90 400 70 Q 400 50 380 50 L 460 50"/>
-        </g>
-        <g fill="#000064" text-anchor="middle" font-family="'ATRUVIA', system-ui, sans-serif" font-weight="700">
-          <text x="60" y="55" font-size="16">Mensch</text>
-          <text x="540" y="55" font-size="16">Technologie</text>
-        </g>
+        <path d="M120 50 C 165 50, 178 24, 232 24 L 288 24 C 332 24, 346 50, 392 50 C 430 50, 444 30, 480 30" stroke="url(#via-grad)"/>
+        <g text-anchor="middle"><text x="60" y="55" font-size="16">Mensch</text><text x="540" y="55" font-size="16">Technologie</text></g>
       </svg>
 
       <!-- Fertigkeit: enge Rückkopplung. Schwierigkeit ist hier das Werkzeug. -->

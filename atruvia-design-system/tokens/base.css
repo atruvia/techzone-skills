@@ -57,13 +57,39 @@ code, kbd, samp { font-family: var(--font-mono); font-size: 0.9em; }
   color: var(--text-link);
 }
 
-/* The VIA Line — signature connecting element */
-.atr-via-line {
+/* The VIA Rule — minimal gradient divider (a flat hairline).
+   Held the name .atr-via-line before the hand-drawn connector took it. */
+.atr-via-rule {
   display: block;
   height: 4px;
   border: 0;
   border-radius: var(--radius-pill);
   background: var(--atr-via-gradient);
+}
+
+/* The VIA Line — signature connecting element.
+   A hand-drawn, self-drawing gradient line joining two labelled terms.
+   Markup: an inline <svg class="atr-via-line"> carrying the canonical path
+   (see assets/logos/via-line.svg) with stroke="url(#…)" + two <text> labels.
+   Add .atr-via-line--draw to animate it in. */
+.atr-via-line {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin-inline: auto;
+}
+.atr-via-line path { fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.atr-via-line text { font-family: var(--font-display); font-weight: var(--weight-bold); fill: var(--text-strong); }
+
+.atr-via-line--draw path {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: atr-via-draw 1100ms var(--ease-out) forwards;
+}
+@keyframes atr-via-draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .atr-via-line--draw path { animation: none; stroke-dashoffset: 0; }
 }
 
 .atr-via-text {

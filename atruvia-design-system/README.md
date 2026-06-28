@@ -200,7 +200,7 @@ Grundlagen:
 - **`tokens/shadows.css`** – weiche Elevation
 - **`tokens/motion.css`** – Easing + Dauern
 - **`tokens/base.css`** – Element-Resets + Marken-Helfer (`.atr-eyebrow`,
-  `.atr-via-line`, `.atr-via-text`, `.atr-container`)
+  `.atr-via-line`, `.atr-via-rule`, `.atr-via-text`, `.atr-container`)
 - **`fonts/fonts.css`** – Webfont-Laden (`@font-face`, selbst gehostet)
 
 Assets:

@@ -121,7 +121,7 @@ function StatsBand() {
         {stats.map(([n, l], i) => (
           <div key={i}>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: "var(--text-4xl)", color: "#fff", letterSpacing: "-.02em" }}>{n}</div>
-            <div className="atr-via-line" style={{ width: 40, margin: "12px 0" }} />
+            <div className="atr-via-rule" style={{ width: 40, margin: "12px 0" }} />
             <div style={{ color: "var(--atr-gray-400)", fontSize: 15 }}>{l}</div>
           </div>
         ))}
@@ -170,7 +170,7 @@ function ConnectionBand() {
   return (
     <section style={{ background: "var(--surface-sunken)", padding: "var(--space-11) 0" }}>
       <div className="atr-container" style={{ textAlign: "center", maxWidth: 820, marginInline: "auto" }}>
-        <div className="atr-via-line" style={{ width: 88, margin: "0 auto 26px" }} />
+        <div className="atr-via-rule" style={{ width: 88, margin: "0 auto 26px" }} />
         <h2 style={{ fontSize: "var(--text-5xl)", lineHeight: 1.08 }}>
           Wir bringen <span className="atr-via-text">Menschen und Märkte</span> von morgen zusammen.
         </h2>

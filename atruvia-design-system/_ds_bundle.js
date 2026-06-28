@@ -845,7 +845,7 @@ function StatsBand() {
       letterSpacing: "-.02em"
     }
   }, n), /*#__PURE__*/React.createElement("div", {
-    className: "atr-via-line",
+    className: "atr-via-rule",
     style: {
       width: 40,
       margin: "12px 0"
@@ -941,7 +941,7 @@ function ConnectionBand() {
       marginInline: "auto"
     }
   }, /*#__PURE__*/React.createElement("div", {
-    className: "atr-via-line",
+    className: "atr-via-rule",
     style: {
       width: 88,
       margin: "0 auto 26px"

@@ -21,7 +21,7 @@ design-system/
     radius.css            corner radii (soft curves + angular cuts)
     shadows.css           soft, cool-tinted elevation
     motion.css            easing + durations (smooth, never bouncy)
-    base.css              element resets + brand helpers (.atr-eyebrow, .atr-via-line, .atr-container)
+    base.css              element resets + brand helpers (.atr-eyebrow, .atr-via-line, .atr-via-rule, .atr-container)
   fonts/                ← fonts.css (@font-face) + the 4 official ATRUVIA woff2 cuts
                           (Light 300/Regular 400/Medium 500/Bold 700; 600+800 reuse Bold).
   brand/                ← atruvia-logo.svg, via-line.svg (the gradient connector), via-mark.svg.
@@ -95,7 +95,7 @@ in blue.
 | `.ask-teacher` | Closing reminder to ask the agent (the teacher) |
 | `.btn` / `.btn--primary` / `.btn--ghost` | Blue pill / outline buttons |
 | `.lesson__nav` | Prev / next / reference footer links |
-| `.via-line` (+ `--draw`) | The VIA Line graphic; `--draw` animates the stroke |
+| `.atr-via-line` (+ `--draw`) | The VIA Line graphic; `--draw` animates the stroke |
 
 ## The VIA Line — the signature device
 

@@ -89,31 +89,18 @@
 .lesson__body a { text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
 
 /* ============================================================
-   The VIA Line — the brand's signature CONNECTOR.
-   It is a GRAPHIC, never a border. Stroked with the official VIA
-   gradient (navy -> action-blue -> aqua, = --atr-via-gradient),
-   it connects two ideas. Inline a connector path (see the
-   template) or drop in brand/via-line.svg. Never recolor it flat.
+   The VIA Line — the brand's signature CONNECTOR (defined in
+   base.css as .atr-via-line). A GRAPHIC, never a border: stroked
+   with the VIA gradient, it connects two labelled ideas. Inline the
+   canonical path (see the template / brand/via-line.svg) and add
+   .atr-via-line--draw to animate. Here we only set the reading-column
+   rhythm around it. Never recolor it flat.
    ============================================================ */
 
-.via-line {
-  display: block;
-  width: 100%;
+.lesson .atr-via-line,
+.reference .atr-via-line {
   max-width: 600px;
-  height: auto;
-  margin: var(--space-9) auto;
-}
-
-/* When animated, the line DRAWS (slow, deliberate). Add .via-line--draw. */
-.via-line--draw path {
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
-  animation: via-draw 1100ms var(--ease-out) forwards;
-}
-@keyframes via-draw { to { stroke-dashoffset: 0; } }
-
-@media (prefers-reduced-motion: reduce) {
-  .via-line--draw path { animation: none; stroke-dashoffset: 0; }
+  margin-block: var(--space-9);
 }
 
 /* ============================================================
@@ -373,5 +360,5 @@
   .ask-teacher h2, .ask-teacher h3, .ask-teacher p, .ask-teacher a { color: var(--text-strong); }
   .btn, .quiz__feedback[hidden] { display: none; }
   a { color: var(--text-strong); }
-  .via-line--draw path { stroke-dashoffset: 0; animation: none; }
+  .atr-via-line--draw path { stroke-dashoffset: 0; animation: none; }
 }
