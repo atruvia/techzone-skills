@@ -1,0 +1,115 @@
+/* ============================================================
+   ATRUVIA — COLOR TOKENS
+   ------------------------------------------------------------
+   ✅ EXTRACTED FROM THE LIVE SITE CSS (atruvia.de, main.css).
+   Values marked (site) are taken verbatim from the stylesheet;
+   a few tints/shades are ~derived to complete each ramp.
+   Semantic roles mirror the site's own --button-* / --color-*
+   custom properties.
+   ============================================================ */
+
+:root {
+  /* ---- Navy — primary brand / ink (site #000064, used ~200x) */
+  --atr-ink-900: #000064;   /* (site) */
+  --atr-ink-800: #081a6e;   /* ~derived */
+  --atr-ink-700: #0f3d81;   /* (site) lighter navy-blue */
+
+  /* ---- Blue — primary action / links / focus (site #0a5ae1) - */
+  --atr-blue-700: #0742a8;  /* ~derived (hover/active) */
+  --atr-blue-600: #0a4ec9;  /* ~derived */
+  --atr-blue-500: #0a5ae1;  /* (site) primary action */
+  --atr-blue-400: #5b8eec;  /* ~derived */
+  --atr-blue-200: #b8d2f8;  /* ~derived */
+  --atr-blue-050: #e9f1fe;  /* ~derived */
+
+  /* ---- Aqua — secondary / icon-button surface (site #d4f2f5) - */
+  --atr-aqua-200: #bfecf0;  /* (site) */
+  --atr-aqua-100: #d4f2f5;  /* (site) */
+  --atr-aqua-050: #eafafb;  /* ~derived */
+
+  /* ---- Coral — the warm accent / danger (site --color-danger) */
+  --atr-coral-600: #eb1700; /* (site) deep red */
+  --atr-coral-500: #ff5a46; /* (site) coral / danger */
+  --atr-coral-050: #ffece9; /* ~derived */
+
+  /* ---- Polar — signature cool near-white (site #f2fafc) ----- */
+  --atr-polar: #f2fafc;     /* (site) */
+
+  /* ---- Neutrals (incl. site greys #767676, #a0a0a0) -------- */
+  --atr-white:    #ffffff;
+  --atr-gray-050: #f4f7fa;  /* ~derived */
+  --atr-gray-100: #ebeef2;  /* ~derived */
+  --atr-gray-200: #dfe3e8;  /* ~derived */
+  --atr-gray-300: #c9cdd3;  /* ~derived */
+  --atr-gray-400: #a0a0a0;  /* (site) */
+  --atr-gray-500: #767676;  /* (site) */
+  --atr-gray-600: #565659;  /* ~derived */
+  --atr-gray-700: #3a3a44;  /* ~derived */
+  --atr-gray-800: #222230;  /* ~derived */
+  --atr-gray-900: #14141f;  /* ~derived */
+
+  /* ---- Semantic status (site greens/oranges/reds) ---------- */
+  --atr-success-600: #0f4d00;
+  --atr-success-500: #146400;  /* (site) */
+  --atr-success-050: #e7f3e4;
+  --atr-warning-600: #c77f0a;
+  --atr-warning-500: #fa9b50;  /* (site) */
+  --atr-warning-050: #fff1e6;
+  --atr-error-600:   #eb1700;  /* (site) */
+  --atr-error-500:   #ff5a46;  /* (site) --color-danger */
+  --atr-error-050:   #ffece9;
+
+  /* ---- The VIA Line gradient (signature connecting element) -
+     navy → action-blue → aqua, all site colours. */
+  --atr-via-gradient: linear-gradient(100deg, var(--atr-ink-900) 0%, var(--atr-blue-500) 55%, var(--atr-aqua-100) 100%);
+  --atr-via-gradient-tri: linear-gradient(100deg, var(--atr-aqua-100) 0%, var(--atr-blue-500) 50%, var(--atr-ink-900) 100%);
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in components.
+     ============================================================ */
+
+  /* Text */
+  --text-strong:   var(--atr-ink-900);
+  --text-body:     var(--atr-gray-700);
+  --text-muted:    var(--atr-gray-500);
+  --text-subtle:   var(--atr-gray-400);
+  --text-on-brand: var(--atr-white);
+  --text-link:     var(--atr-blue-500);
+  --text-link-hover: var(--atr-blue-700);
+
+  /* Surfaces */
+  --surface-page:    var(--atr-white);
+  --surface-sunken:  var(--atr-polar);
+  --surface-card:    var(--atr-white);
+  --surface-raised:  var(--atr-white);
+  --surface-inverse: var(--atr-ink-900);
+  --surface-brand:   var(--atr-ink-900);
+  --surface-brand-subtle: var(--atr-aqua-100);
+
+  /* Borders */
+  --border-subtle:  var(--atr-gray-200);
+  --border-default: var(--atr-gray-300);
+  --border-strong:  var(--atr-gray-400);
+  --border-brand:   var(--atr-blue-500);
+  --border-focus:   var(--atr-blue-500);
+
+  /* Interactive — primary (site action blue) */
+  --action-primary-bg:        var(--atr-blue-500);
+  --action-primary-bg-hover:  var(--atr-blue-700);
+  --action-primary-bg-active: var(--atr-ink-700);
+  --action-primary-fg:        var(--atr-white);
+
+  /* Interactive — secondary (site aqua surface + blue text) */
+  --action-secondary-bg:        var(--atr-aqua-100);
+  --action-secondary-bg-hover:  var(--atr-aqua-200);
+  --action-secondary-fg:        var(--atr-blue-700);
+
+  /* Interactive — neutral */
+  --action-neutral-bg:        var(--atr-white);
+  --action-neutral-bg-hover:  var(--atr-gray-050);
+  --action-neutral-border:    var(--atr-gray-300);
+  --action-neutral-fg:        var(--atr-ink-900);
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 3px var(--atr-blue-200);
+}

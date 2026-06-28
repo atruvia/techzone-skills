@@ -1,0 +1,19 @@
+/* ============================================================
+   ATRUVIA — MOTION TOKENS
+   Connection in motion: smooth, confident, never bouncy.
+   Easing leans into a gentle ease-out; transitions are short.
+   ============================================================ */
+
+:root {
+  --ease-standard: cubic-bezier(0.2, 0.0, 0.0, 1.0);   /* @kind other */
+  --ease-emphasized: cubic-bezier(0.2, 0.0, 0.0, 1.0); /* @kind other */
+  --ease-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);         /* @kind other */
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);        /* @kind other */
+
+  --duration-fast: 120ms;   /* @kind other */
+  --duration-base: 200ms;   /* @kind other */
+  --duration-slow: 320ms;   /* @kind other */
+  --duration-slower: 480ms; /* @kind other */
+
+  --transition-control: all var(--duration-base) var(--ease-standard);
+}

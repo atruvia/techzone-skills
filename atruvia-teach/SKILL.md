@@ -87,9 +87,9 @@ mkdir -p assets && cp -R "<this skill>/design-system" assets/design-system
 <script src="../assets/design-system/quiz.js"></script>
 ```
 
-`lessons.css` imports the tokens (`colors_and_type.css`) and loads the Atruvia fonts from `fonts/` via relative URLs — it all works offline, no CDN. Compose from the tokens (`--atr-navy`, `--space-5`, `--font-display`, `--r-pill`, …); **never invent new colors, fonts, or spacing.**
+`lessons.css` pulls in the design tokens (`tokens/*.css`) and loads the official ATRUVIA / VIA Type fonts from `fonts/` via relative URLs — it all works offline, no CDN. Compose from the tokens (`--text-strong`, `--space-5`, `--font-display`, `--radius-lg`, `--focus-ring`, …); **never invent new colors, fonts, or spacing.**
 
-**The VIA Line** is the brand's signature device: a continuous **coral** (`#fd5f4c`) stroke that *connects* two ideas. Use it as a meaningful section divider (inline the path from the template, or drop in `brand/via-line.svg`). It is a graphic, never a border — never recolor it.
+**The VIA Line** is the brand's signature device: a continuous stroke painted with the official **VIA gradient** (navy→blue→aqua, `--atr-via-gradient`) that *connects* two ideas. Use it as a meaningful section divider (inline the connector path from the template, or drop in `brand/via-line.svg`). It is a graphic, never a border — never repaint it flat. (Coral is reserved for danger/accent, not the VIA Line.)
 
 **Brand voice — full Atruvia brand.** Lessons read like Atruvia surfaces:
 
@@ -97,7 +97,7 @@ mkdir -p assets && cp -R "<this skill>/design-system" assets/design-system
 - **Gender-Stern**: *Kund\*innen, Mitarbeiter\*innen, Kolleg\*innen, Lernende*.
 - **»German guillemets«** for quotes — never "straight" or "curly".
 - **Short, declarative, calm.** No exclamation points, no hype.
-- **No emoji. No Unicode glyphs as icons** (no ▸ ★ ✓) — draw markers in CSS, or use Lucide for real icons.
+- **No emoji. No Unicode glyphs as icons** (no ▸ ★ ✓) — draw markers in CSS, or use real (SVG) icons.
 - Sentence case for headlines; the logo is the rare uppercase **ATRUVIA**.
 
 Use English only when the topic is inherently English (e.g. code keywords) or the learner asks — keep the same calm, plural, understated register. If the learner later wants a different look or voice, record it in `NOTES.md` and adapt.

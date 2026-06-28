@@ -1,4 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 80" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-label="VIA Line motif">
-  
-  <path d="M4 40 C 60 40, 80 8, 140 8 L 220 8 C 260 8, 280 40, 320 40 C 360 40, 380 12, 440 12 L 500 12 L 540 40 C 560 50, 580 40, 596 40"></path>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 80" fill="none" aria-label="VIA Line motif">
+  <defs>
+    <!-- The signature VIA gradient: navy through action-blue to aqua -->
+    <linearGradient id="atr-via-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="40" x2="600" y2="40">
+      <stop offset="0" stop-color="#000064"/>
+      <stop offset="0.55" stop-color="#0a5ae1"/>
+      <stop offset="1" stop-color="#d4f2f5"/>
+    </linearGradient>
+  </defs>
+  <path d="M4 40 C 60 40, 80 8, 140 8 L 220 8 C 260 8, 280 40, 320 40 C 360 40, 380 12, 440 12 L 500 12 L 540 40 C 560 50, 580 40, 596 40"
+        stroke="url(#atr-via-gradient)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
