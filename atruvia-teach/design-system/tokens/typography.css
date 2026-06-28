@@ -1,17 +1,17 @@
 /* ============================================================
    ATRUVIA — TYPOGRAPHY TOKENS
    ------------------------------------------------------------
-   ✅ OFFICIAL FACE: "ATRUVIA" — Atruvia's custom corporate
-   typeface — is self-hosted (see fonts/fonts.css). Display
-   weight (800) uses the dedicated VIA Type Display cut; mono
-   uses VIA Type Mono.
+   OFFICIAL FACE: "ATRUVIA" — Atruvia's custom corporate typeface —
+   is self-hosted (see fonts/fonts.css). The brand ships four real
+   weights (300/400/500/700); weight 600 and 800 reuse the real Bold.
+   There is no brand monospace, so --font-mono is a system mono stack.
    ============================================================ */
 
 :root {
   /* ---- Families ------------------------------------------- */
   --font-sans: "ATRUVIA", "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-display: "ATRUVIA", "Segoe UI", system-ui, sans-serif;
-  --font-mono: "ATRUVIA Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 
   /* ---- Weights -------------------------------------------- */
   --weight-regular: 400;

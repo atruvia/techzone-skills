@@ -22,8 +22,8 @@ design-system/
     shadows.css           soft, cool-tinted elevation
     motion.css            easing + durations (smooth, never bouncy)
     base.css              element resets + brand helpers (.atr-eyebrow, .atr-via-line, .atr-container)
-  fonts/                ← fonts.css (@font-face) + the 7 official VIA Type woff2 cuts
-                          (Light/Regular/Medium/SemiBold/Bold/Display + Mono).
+  fonts/                ← fonts.css (@font-face) + the 4 official ATRUVIA woff2 cuts
+                          (Light 300/Regular 400/Medium 500/Bold 700; 600+800 reuse Bold).
   brand/                ← atruvia-logo.svg, via-line.svg (the gradient connector), via-mark.svg.
   lessons.css           ← teach's shared stylesheet. Pulls in the tokens + fonts and adds
                           the teaching components. THIS is the file lessons link.
@@ -75,8 +75,9 @@ Read the files in `tokens/` for the full set. The ones you reach for most:
 | `--radius-md` / `--radius-lg` / `--radius-pill` | 12 / 18 / 999px | Inputs / cards & callouts / pills |
 | `--focus-ring` | 3px blue halo | Every focusable control |
 
-Type: lesson titles use the **Display cut (800)** — set `.lesson__title`;
-section `h2`/`h3` are **Bold 700** navy; body is **400, 18px, line-height 1.65**
+Type: lesson titles use the heaviest weight (**800**, which maps to the real
+Bold cut) — set `.lesson__title`; section `h2`/`h3` are **Bold 700** navy; body
+is **400, 18px, line-height 1.65**
 in `--text-body`. Eyebrows/overlines are **uppercase, wide-tracked, semibold**,
 in blue.
 
@@ -123,8 +124,11 @@ For each other."*
 
 ## Caveats (inherited from upstream — flag, don't hide)
 
-- The official **ATRUVIA / VIA Type** family is vendored (7 cuts) and loads
-  offline. If the woff2 files are ever missing, the stack falls back to
+- The official **ATRUVIA / VIA Type** family is vendored as **4 real cuts**
+  (Light 300, Regular 400, Medium 500, Bold 700) and loads offline. The brand
+  ships no SemiBold or Display cut, so weights **600 and 800 reuse the real
+  Bold**. If the woff2 files are ever missing, the stack falls back to
   **system-ui** (no web fallback font is fetched — fully offline).
-- The **mono** face is **ATRUVIA Mono** — fine for code in lessons.
+- There is **no brand monospace** — `--font-mono` is a system mono stack
+  (`ui-monospace, …`), which is what code/data in lessons renders in.
 - Photography is out of scope here; lessons are type-, token- and VIA-line-led.
