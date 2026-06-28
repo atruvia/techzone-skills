@@ -48,4 +48,6 @@ Alle Artefakte aus diesen Skills folgen der Atruvia-Markenstimme: **Deutsch**, e
 
 ## Lizenz
 
-[MIT](LICENSE) © 2026 Atruvia AG
+**Proprietär** — © 2026 Atruvia AG. Alle Rechte vorbehalten.
+
+Dieses Repository bündelt geschützte Markenmaterialien der Atruvia AG — Schriften, Logos, die VIA-Linie, Farbwerte und Design-Tokens. Es ist **keine** Open-Source-Software: Die Nutzung ist autorisierten Nutzer\*innen (Mitarbeiter\*innen und Vertragspartner\*innen der Atruvia AG) für Atruvia-Zwecke vorbehalten. Es gelten die vollständigen Bedingungen in der [LICENSE](LICENSE).
