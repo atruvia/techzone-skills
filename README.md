@@ -29,6 +29,34 @@ Skills sind Ordner, die Claude Code automatisch erkennt. Lege sie in eines der b
 - **Persönlich (alle Projekte):** `~/.claude/skills/`
 - **Projektbezogen (geteilt im Repo):** `.claude/skills/`
 
+### Schnellinstallation per Skript
+
+Nach dem Klonen installierst du die Atruvia-Skills mit einem Befehl nach `~/.claude/skills/`:
+
+```sh
+git clone https://github.com/atruvia/techzone-skills.git
+cd techzone-skills
+./install.sh                 # nur die Atruvia-Skills (Kern)
+./install.sh --dry-run       # vorher anzeigen, was passieren würde
+```
+
+Der Installer ist idempotent — ein erneuter Lauf bringt die Skills auf den Stand des Repos. Voraussetzung: `bash` und `rsync` (Linux-Desktop und macOS; Windows nur via WSL).
+
+**Optionale externe Extras** (Opt-in, laden Fremdinhalte aus dem Netz):
+
+```sh
+./install.sh --with-external   # zusätzlich Pocock-Skills + BMAD-Starter
+./install.sh --with-pocock     # nur Matt Pococks Skills (MIT)
+./install.sh --with-bmad       # nur BMAD-Starter → ~/Documents/bmad-starter
+```
+
+- **Matt Pocock Skills** — [github.com/mattpocock/skills](https://github.com/mattpocock/skills) (MIT). Vorhandene gleichnamige Skills werden ohne `--force` nicht überschrieben.
+- **BMAD-METHOD** — via `npx bmad-method` (benötigt Node ≥ 20.12), scaffolded nach `~/Documents/bmad-starter`. Ein vorhandener Starter bleibt ohne `--force` unangetastet.
+
+Diese Extras stammen **nicht** von Atruvia und unterliegen ihren eigenen Lizenzen.
+
+### Manuell (Fallback)
+
 ```sh
 # Beispiel: das Design System persönlich verfügbar machen
 git clone https://github.com/atruvia/techzone-skills.git
